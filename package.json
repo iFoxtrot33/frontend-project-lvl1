@@ -10,16 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/iFoxtrot33/frontend-project-lvl1.git"
   },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/iFoxtrot33/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/iFoxtrot33/frontend-project-lvl1#readme"
+ 
   "type": "module",
-  
-  "bin": {
-    "brain-games": "bin/brain-games.js"
-  }
+  "homepage": "https://github.com/iFoxtrot33/frontend-project-lvl1#readme"
 }
-
