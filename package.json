@@ -16,4 +16,5 @@
     "url": "https://github.com/iFoxtrot33/frontend-project-lvl1/issues"
   },
   "homepage": "https://github.com/iFoxtrot33/frontend-project-lvl1#readme"
+  "type": "module",
 }
