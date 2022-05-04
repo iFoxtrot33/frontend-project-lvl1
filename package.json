@@ -21,6 +21,10 @@
   "type": "module",
   "homepage": "https://github.com/iFoxtrot33/frontend-project-lvl1#readme",
   "devDependencies": {
+    "eslint-plugin-jest": "^26.1.5",
     "readline-sync": "^1.4.10"
+  },
+  "dependencies": {
+    "eslint-config-airbnb-base": "^15.0.0"
   }
 }
