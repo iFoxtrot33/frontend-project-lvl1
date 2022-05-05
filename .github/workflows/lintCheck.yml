@@ -1,0 +1,15 @@
+name: lint-check
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '**'
+      jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    -run: make make-lint
+      ls ${{ github.workspace }}
+    - run: echo "This job's status is ${{ job.status }}.
