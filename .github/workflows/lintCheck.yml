@@ -1,4 +1,4 @@
-name: Test
+name: Eslint
 
 on:
   push:
@@ -14,12 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Run eslint
+        run: make make-lint
 
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
 
 
