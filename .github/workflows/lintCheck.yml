@@ -13,6 +13,5 @@ on:
     - uses: actions/checkout@v2
 
     -name: checks by linter
-    run: make make-lint
-      ls ${{ github.workspace }}
-    - run: echo "This job's status is ${{ job.status }}.
+     run: make make-lint
+
