@@ -1,14 +1,25 @@
-name: lint-check
+name: Test
+
 on:
   push:
-   branches: [ main ]
-      jobs:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    -name: checks by linter
-     run: make make-lint
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
 
