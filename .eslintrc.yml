@@ -20,6 +20,7 @@ rules:
   no-unused-vars: off
   no-alert: off
   no-undef: off
+  quotes: off
   import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
     - ignorePackages
