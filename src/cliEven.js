@@ -1,14 +1,14 @@
 import readlineSync from 'readline-sync';
 
 const evenGame = () => {
-  console.log('Welcome to the Brain Games!');
+  console.log('Welcome to the Brain Games!');                                  // Greetings
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName} !`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const firstNumber = Math.floor(Math.random() * 101);
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');   //Gamerule
+  const firstNumber = Math.floor(Math.random() * 101);                         //All numbers are in range from 0 to 100
   const secondNumber = Math.floor(Math.random() * 101);
   const thirdNumber = Math.floor(Math.random() * 101);
-  console.log(firstNumber);
+  console.log(firstNumber);                                                   // Commence of the first round
   let clientAnswer = readlineSync.question('Question:');
   if (((firstNumber % 2) === 0) && (clientAnswer === 'yes')) {
     console.log('Correct!');
@@ -21,7 +21,7 @@ const evenGame = () => {
     return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
         Let's try again, ${userName}!`);
   }
-  console.log(secondNumber);
+  console.log(secondNumber);                                                // Commence of the second round
   clientAnswer = readlineSync.question('Question:');
   if (((secondNumber % 2) === 0) && (clientAnswer === 'yes')) {
     console.log('Correct!');
@@ -34,7 +34,7 @@ const evenGame = () => {
     return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
         Let's try again, ${userName}!`);
   }
-  console.log(thirdNumber);
+  console.log(thirdNumber);                                                 // Commence of the third round
   clientAnswer = readlineSync.question('Question:');
   if (((thirdNumber % 2) === 0) && (clientAnswer === 'yes')) {
     console.log('Correct!');
@@ -47,7 +47,7 @@ const evenGame = () => {
     return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
           Let's try again, ${userName}!`);
   }
-  return console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);                      //Final words in case of victory
 };
 
 export default evenGame;
