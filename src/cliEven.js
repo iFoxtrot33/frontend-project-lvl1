@@ -1,14 +1,18 @@
 import readlineSync from 'readline-sync';
 
 const evenGame = () => {
-  console.log('Welcome to the Brain Games!');                                  // Greetings
+  // Greetings
+  console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName} !`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');   //Gamerule
-  const firstNumber = Math.floor(Math.random() * 101);                         //All numbers are in range from 0 to 100
+  // Gamerule
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  // All numbers are in range from 0 to 100
+  const firstNumber = Math.floor(Math.random() * 101);
   const secondNumber = Math.floor(Math.random() * 101);
   const thirdNumber = Math.floor(Math.random() * 101);
-  console.log(firstNumber);                                                   // Commence of the first round
+  // Commence of the first round
+  console.log(firstNumber);
   let clientAnswer = readlineSync.question('Question:');
   if (((firstNumber % 2) === 0) && (clientAnswer === 'yes')) {
     console.log('Correct!');
@@ -21,7 +25,8 @@ const evenGame = () => {
     return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
         Let's try again, ${userName}!`);
   }
-  console.log(secondNumber);                                                // Commence of the second round
+  // Commence of the second round
+  console.log(secondNumber);
   clientAnswer = readlineSync.question('Question:');
   if (((secondNumber % 2) === 0) && (clientAnswer === 'yes')) {
     console.log('Correct!');
@@ -34,7 +39,8 @@ const evenGame = () => {
     return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
         Let's try again, ${userName}!`);
   }
-  console.log(thirdNumber);                                                 // Commence of the third round
+  // Commence of the third round
+  console.log(thirdNumber);
   clientAnswer = readlineSync.question('Question:');
   if (((thirdNumber % 2) === 0) && (clientAnswer === 'yes')) {
     console.log('Correct!');
@@ -47,7 +53,8 @@ const evenGame = () => {
     return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
           Let's try again, ${userName}!`);
   }
-  return console.log(`Congratulations, ${userName}!`);                      //Final words in case of victory
+  // Final words in case of victory
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default evenGame;
