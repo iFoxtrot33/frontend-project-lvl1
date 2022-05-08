@@ -16,11 +16,17 @@ Answer "yes" if the number is even, otherwise answer "no"
 
 Sample:
 Welcome to the Brain Games!
-May I have your name? Bill
-Hello, Bill!
+May I have your name? Iurii
+Hello, Iurii!
 Answer "yes" if the number is even, otherwise answer "no".
 Question: 15
 Your answer: yes
+
+In case of wrong answer:
+'yes' is wrong answer ;(. Correct answer was 'no'.
+Let's try again, Iurii!
+
+In case of right answer: Correct!
 __________
 Game: brain-calc
 
@@ -37,6 +43,12 @@ What is the result of the expression?
 Question: 4 + 10
 Your answer: 14
 Correct!
+
+In case of wrong answer: 
+'145' is wrong answer ;(. Correct answer was '175'.
+Let's try again, Iurii!
+
+In case of right answer: Correct!
 __________
 Game: brain-gcd 
 
@@ -52,6 +64,12 @@ Find the greatest common divisor of given numbers.
 Question: 25 50
 Your answer: 25
 Correct!
+
+In case of wrong answer: 
+'5' is wrong answer ;(. Correct answer was '25'.
+Let's try again, Iurii!
+
+In case of right answer: Correct!
 ___________
 Game: brain-progression
 
@@ -68,6 +86,12 @@ What number is missing in the progression?
 Question: 5 7 9 11 13 .. 17 19 21 23
 Your answer: 15
 Correct!
+
+In case of wrong answer: 
+'14' is wrong answer ;(. Correct answer was '15'.
+Let's try again, Iurii!
+
+In case of right answer: Correct!
 ____________
 Game: brain-prime
 
@@ -84,6 +108,12 @@ Answer "yes" if given number is prime. Otherwise answer "no".
 Question: 7
 Your answer: yes
 Correct!
+
+In case of wrong answer:
+'yes' is wrong answer ;(. Correct answer was 'no'.
+Let's try again, Iurii!
+
+In case of right answer: Correct!
 
 
 
