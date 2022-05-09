@@ -12,8 +12,8 @@ const evenGame = () => {
   const secondNumber = Math.floor(Math.random() * 101);
   const thirdNumber = Math.floor(Math.random() * 101);
   // Commence of the first round
-  console.log(firstNumber);
-  let clientAnswer = readlineSync.question('Question:');
+  console.log(`Question: ${firstNumber}`);
+  let clientAnswer = readlineSync.question(`Your answer: `);
   if (((firstNumber % 2) === 0) && (clientAnswer === 'yes')) {
     console.log('Correct!');
   } else if (((firstNumber % 2) !== 0) && (clientAnswer === 'no')) {
@@ -26,8 +26,8 @@ const evenGame = () => {
         Let's try again, ${userName}!`);
   }
   // Commence of the second round
-  console.log(secondNumber);
-  clientAnswer = readlineSync.question('Question:');
+  console.log(`Question: ${secondNumber}`);
+  clientAnswer = readlineSync.question(`Your answer: `);
   if (((secondNumber % 2) === 0) && (clientAnswer === 'yes')) {
     console.log('Correct!');
   } else if (((secondNumber % 2) !== 0) && (clientAnswer === 'no')) {
@@ -40,8 +40,8 @@ const evenGame = () => {
         Let's try again, ${userName}!`);
   }
   // Commence of the third round
-  console.log(thirdNumber);
-  clientAnswer = readlineSync.question('Question:');
+  console.log(`Question: ${thirdNumber}`);
+  clientAnswer = readlineSync.question(`Your answer: `);
   if (((thirdNumber % 2) === 0) && (clientAnswer === 'yes')) {
     console.log('Correct!');
   } else if (((thirdNumber % 2) !== 0) && (clientAnswer === 'no')) {
