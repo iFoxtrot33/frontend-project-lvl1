@@ -64,23 +64,20 @@ const calcGame = () => {
   if ((sign === 0) && ((firstNumber + secondNumber) === ans)) {
     console.log('Correct!');
   } else if ((sign === 0) && ((firstNumber + secondNumber) !== ans)) {
-    console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}`);
-    console.log(`Let's try again, ${userName}!`);
-    return;
+    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
+      Let's try again, ${userName}!`);
   }
   if ((sign === 1) && ((firstNumber - secondNumber) === ans)) {
     console.log('Correct!');
   } else if ((sign === 1) && ((firstNumber - secondNumber) !== ans)) {
-    console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber - secondNumber}`);
-    console.log(`Let's try again, ${userName}!`);
-    return;
+    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
+      Let's try again, ${userName}!`);
   }
   if ((sign === 2) && ((firstNumber * secondNumber) === ans)) {
     console.log('Correct!');
   } else if ((sign === 2) && ((firstNumber * secondNumber) !== ans)) {
-    console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}`);
-    console.log(`Let's try again, ${userName}!`);
-    return;
+    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
+      Let's try again, ${userName}!`);
   }
   // Commence of the third round
   firstNumber = Math.floor(Math.random() * 101);

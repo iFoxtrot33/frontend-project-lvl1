@@ -4,7 +4,7 @@ const evenGame = () => {
   // Greetings
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName} !`);
+  console.log(`Hello, ${userName}!`);
   // Gamerule
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   // All numbers are in range from 0 to 100
