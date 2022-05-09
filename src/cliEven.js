@@ -24,6 +24,9 @@ const evenGame = () => {
   } else if (firstNumber === 'no') {
     return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
         Let's try again, ${userName}!`);
+  } else {
+    return console.log(`${clientAnswer} is wrong answer ;(. Correct answer was 'yes'.
+      Let's try again, ${userName}!`);
   }
   // Commence of the second round
   console.log(`Question: ${secondNumber}`);
@@ -38,6 +41,9 @@ const evenGame = () => {
   } else if (clientAnswer === 'no') {
     return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
         Let's try again, ${userName}!`);
+  } else {
+    return console.log(`${clientAnswer} is wrong answer ;(. Correct answer was 'yes'.
+      Let's try again, ${userName}!`);
   }
   // Commence of the third round
   console.log(`Question: ${thirdNumber}`);
@@ -52,6 +58,9 @@ const evenGame = () => {
   } else if (clientAnswer === 'no') {
     return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
           Let's try again, ${userName}!`);
+  } else {
+    return console.log(`${clientAnswer} is wrong answer ;(. Correct answer was 'yes'.
+      Let's try again, ${userName}!`);
   }
   // Final words in case of victory
   return console.log(`Congratulations, ${userName}!`);
