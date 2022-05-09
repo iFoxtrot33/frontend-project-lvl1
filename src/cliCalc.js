@@ -15,13 +15,13 @@ const calcGame = () => {
   console.log(`Hello, ${userName}!`);
   // Chosing the sign of expression and taking user's answer
   if (sign === 0) {
-    console.log(`Question:${firstNumber} + ${secondNumber} = `);
+    console.log(`Question: ${firstNumber} + ${secondNumber}`);
     ans = readlineSync.question(`Your answer:`);
   } else if (sign === 1) {
-    console.log(`Question:${firstNumber} - ${secondNumber} = `);
+    console.log(`Question: ${firstNumber} - ${secondNumber}`);
     ans = readlineSync.question(`Your answer:`);
   } else if (sign === 2) {
-    console.log(`Question:${firstNumber} * ${secondNumber} = `);
+    console.log(`Question: ${firstNumber} * ${secondNumber}`);
     ans = readlineSync.question(`Your answer:`);
   }
   ans *= 1;
@@ -51,13 +51,13 @@ const calcGame = () => {
   sign = Math.floor(Math.random() * 3);
 
   if (sign === 0) {
-    console.log(`Question:${firstNumber} + ${secondNumber} = `);
+    console.log(`Question: ${firstNumber} + ${secondNumber}`);
     ans = readlineSync.question(`Your answer:`);
   } else if (sign === 1) {
-    console.log(`Question:${firstNumber} - ${secondNumber} = `);
+    console.log(`Question: ${firstNumber} - ${secondNumber}`);
     ans = readlineSync.question(`Your answer:`);
   } else if (sign === 2) {
-    console.log(`Question:${firstNumber} * ${secondNumber} = `);
+    console.log(`Question: ${firstNumber} * ${secondNumber}`);
     ans = readlineSync.question(`Your answer:`);
   }
   ans *= 1;
@@ -85,13 +85,13 @@ const calcGame = () => {
   sign = Math.floor(Math.random() * 3);
 
   if (sign === 0) {
-    console.log(`Question:${firstNumber} + ${secondNumber} = `);
+    console.log(`Question: ${firstNumber} + ${secondNumber}`);
     ans = readlineSync.question(`Your answer:`);
   } else if (sign === 1) {
-    console.log(`Question:${firstNumber} - ${secondNumber} = `);
+    console.log(`Question: ${firstNumber} - ${secondNumber}`);
     ans = readlineSync.question(`Your answer:`);
   } else if (sign === 2) {
-    console.log(`Question:${firstNumber} * ${secondNumber} = `);
+    console.log(`Question: ${firstNumber} * ${secondNumber}`);
     ans = readlineSync.question(`Your answer:`);
   }
   ans *= 1;
