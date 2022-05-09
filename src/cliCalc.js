@@ -30,19 +30,19 @@ const calcGame = () => {
     console.log('Correct!');
   } else if ((sign === 0) && ((firstNumber + secondNumber) !== ans)) {
     return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-    Let's try again,${userName}`);
+    Let's try again,${userName}!`);
   }
   if ((sign === 1) && ((firstNumber - secondNumber) === ans)) {
     console.log('Correct!');
   } else if ((sign === 1) && ((firstNumber - secondNumber) !== ans)) {
     return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber - secondNumber}.
-        Let's try again,${userName}`);
+        Let's try again,${userName}!`);
   }
   if ((sign === 2) && ((firstNumber * secondNumber) === ans)) {
     console.log('Correct!');
   } else if ((sign === 2) && ((firstNumber * secondNumber) !== ans)) {
     return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-        Let's try again,${userName}`);
+        Let's try again,${userName}!`);
   }
   // First round completed. In case if the user is corret we continue the game
   // Commence of the second round
@@ -64,20 +64,23 @@ const calcGame = () => {
   if ((sign === 0) && ((firstNumber + secondNumber) === ans)) {
     console.log('Correct!');
   } else if ((sign === 0) && ((firstNumber + secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-    Let's try again,${userName}`);
+    console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}`);
+    console.log(`Let's try again, ${userName}!`);
+    return;
   }
   if ((sign === 1) && ((firstNumber - secondNumber) === ans)) {
     console.log('Correct!');
   } else if ((sign === 1) && ((firstNumber - secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber - secondNumber}.
-        Let's try again,${userName}`);
+    console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber - secondNumber}`);
+    console.log(`Let's try again, ${userName}!`);
+    return;
   }
   if ((sign === 2) && ((firstNumber * secondNumber) === ans)) {
     console.log('Correct!');
   } else if ((sign === 2) && ((firstNumber * secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-        Let's try again,${userName}`);
+    console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}`);
+    console.log(`Let's try again, ${userName}!`);
+    return;
   }
   // Commence of the third round
   firstNumber = Math.floor(Math.random() * 101);
@@ -99,19 +102,19 @@ const calcGame = () => {
     console.log('Correct!');
   } else if ((sign === 0) && ((firstNumber + secondNumber) !== ans)) {
     return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-    Let's try again,${userName}`);
+    Let's try again,${userName}!`);
   }
   if ((sign === 1) && ((firstNumber - secondNumber) === ans)) {
     console.log('Correct!');
   } else if ((sign === 1) && ((firstNumber - secondNumber) !== ans)) {
     return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber - secondNumber}.
-        Let's try again,${userName}`);
+        Let's try again,${userName}!`);
   }
   if ((sign === 2) && ((firstNumber * secondNumber) === ans)) {
     console.log('Correct!');
   } else if ((sign === 2) && ((firstNumber * secondNumber) !== ans)) {
     return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-        Let's try again,${userName}`);
+        Let's try again,${userName}!`);
   }
   // Final words in case of victory
   return console.log(`Congratulations, ${userName}! `);

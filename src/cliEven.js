@@ -21,7 +21,7 @@ const evenGame = () => {
   } else if (clientAnswer === 'yes') {
     return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'. 
       Let's try again, ${userName}!`);
-  } else if (clientAnswer === 'no') {
+  } else if (firstNumber === 'no') {
     return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
         Let's try again, ${userName}!`);
   }
