@@ -13,6 +13,6 @@ export const answer = () => readlineSync.question(`Your answer: `);
 
 export const wrongAnswer = (clientAnswer, userName, correctAnswer) => `${clientAnswer}
 is wrong answer ;(. Correct answer was ${correctAnswer}.
-Lets try again, ${userName}!`;
+Let's try again, ${userName}!`;
 
 export const victory = (userName) => `Congratulations, ${userName}!`;
