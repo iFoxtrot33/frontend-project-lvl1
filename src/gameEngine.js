@@ -11,8 +11,8 @@ export const gameQuestion = (question) => `Question: ${question}`;
 
 export const answer = () => readlineSync.question(`Your answer: `);
 
-export const wrongAnswer = (clientAnswer, userName, correctAnswer) => `${clientAnswer}
-is wrong answer ;(. Correct answer was ${correctAnswer}.
+export const wrongAnswer = (clientAnswer, userName, correctAnswer) => `
+${clientAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.
 Let's try again, ${userName}!`;
 
 export const victory = (userName) => `Congratulations, ${userName}!`;
