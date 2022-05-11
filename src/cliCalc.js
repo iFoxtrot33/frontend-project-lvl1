@@ -1,4 +1,6 @@
-import readlineSync from 'readline-sync';
+import {
+  greetings, gameQuestion, answer, wrongAnswer, victory,
+} from './gameEngine.js';
 
 const calcGame = () => {
   // First number with the range from 0 to 100
@@ -8,113 +10,103 @@ const calcGame = () => {
   // Range for math sign from 0 to 2 (+-*)
   let sign = Math.floor(Math.random() * 3);
   // For users input
-  let ans = 0;
+  let clientAnswer = 0;
   // Greetings
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+  const name = (greetings());
+  console.log('What is the result of the expression?');
   // Chosing the sign of expression and taking user's answer
   if (sign === 0) {
-    console.log(`Question: ${firstNumber} + ${secondNumber}`);
-    ans = readlineSync.question(`Your answer:`);
+    console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
+    clientAnswer = answer();
   } else if (sign === 1) {
-    console.log(`Question: ${firstNumber} - ${secondNumber}`);
-    ans = readlineSync.question(`Your answer:`);
+    console.log(gameQuestion(`${firstNumber} - ${secondNumber}`));
+    clientAnswer = answer();
   } else if (sign === 2) {
-    console.log(`Question: ${firstNumber} * ${secondNumber}`);
-    ans = readlineSync.question(`Your answer:`);
+    console.log(gameQuestion(`${firstNumber} * ${secondNumber}`));
+    clientAnswer = answer();
   }
-  ans *= 1;
+  clientAnswer *= 1;
   // Deciding whether user's answer is correct or not
-  if ((sign === 0) && ((firstNumber + secondNumber) === ans)) {
+  if ((sign === 0) && ((firstNumber + secondNumber) === clientAnswer)) {
     console.log('Correct!');
-  } else if ((sign === 0) && ((firstNumber + secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-    Let's try again, ${userName}!`);
+  } else if ((sign === 0) && ((firstNumber + secondNumber) !== clientAnswer)) {
+    return wrongAnswer(clientAnswer, name, clientAnswer);
   }
-  if ((sign === 1) && ((firstNumber - secondNumber) === ans)) {
+  if ((sign === 1) && ((firstNumber - secondNumber) === clientAnswer)) {
     console.log('Correct!');
-  } else if ((sign === 1) && ((firstNumber - secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber - secondNumber}.
-        Let's try again, ${userName}!`);
+  } else if ((sign === 1) && ((firstNumber - secondNumber) !== clientAnswer)) {
+    return wrongAnswer(clientAnswer, name, firstNumber - secondNumber);
   }
-  if ((sign === 2) && ((firstNumber * secondNumber) === ans)) {
+  if ((sign === 2) && ((firstNumber * secondNumber) === clientAnswer)) {
     console.log('Correct!');
-  } else if ((sign === 2) && ((firstNumber * secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-        Let's try again, ${userName}!`);
+  } else if ((sign === 2) && ((firstNumber * secondNumber) !== clientAnswer)) {
+    return wrongAnswer(clientAnswer, name, firstNumber * secondNumber);
   }
   // First round completed. In case if the user is corret we continue the game
   // Commence of the second round
   firstNumber = Math.floor(Math.random() * 101);
   secondNumber = Math.floor(Math.random() * 101);
   sign = Math.floor(Math.random() * 3);
-
   if (sign === 0) {
-    console.log(`Question: ${firstNumber} + ${secondNumber}`);
-    ans = readlineSync.question(`Your answer:`);
+    console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
+    clientAnswer = answer();
   } else if (sign === 1) {
-    console.log(`Question: ${firstNumber} - ${secondNumber}`);
-    ans = readlineSync.question(`Your answer:`);
+    console.log(gameQuestion(`${firstNumber} - ${secondNumber}`));
+    clientAnswer = answer();
   } else if (sign === 2) {
-    console.log(`Question: ${firstNumber} * ${secondNumber}`);
-    ans = readlineSync.question(`Your answer:`);
+    console.log(gameQuestion(`${firstNumber} * ${secondNumber}`));
+    clientAnswer = answer();
   }
-  ans *= 1;
-  if ((sign === 0) && ((firstNumber + secondNumber) === ans)) {
+  clientAnswer *= 1;
+  // Deciding whether user's answer is correct or not
+  if ((sign === 0) && ((firstNumber + secondNumber) === clientAnswer)) {
     console.log('Correct!');
-  } else if ((sign === 0) && ((firstNumber + secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-      Let's try again, ${userName}!`);
+  } else if ((sign === 0) && ((firstNumber + secondNumber) !== clientAnswer)) {
+    return wrongAnswer(clientAnswer, name, clientAnswer);
   }
-  if ((sign === 1) && ((firstNumber - secondNumber) === ans)) {
+  if ((sign === 1) && ((firstNumber - secondNumber) === clientAnswer)) {
     console.log('Correct!');
-  } else if ((sign === 1) && ((firstNumber - secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-      Let's try again, ${userName}!`);
+  } else if ((sign === 1) && ((firstNumber - secondNumber) !== clientAnswer)) {
+    return wrongAnswer(clientAnswer, name, firstNumber - secondNumber);
   }
-  if ((sign === 2) && ((firstNumber * secondNumber) === ans)) {
+  if ((sign === 2) && ((firstNumber * secondNumber) === clientAnswer)) {
     console.log('Correct!');
-  } else if ((sign === 2) && ((firstNumber * secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-      Let's try again, ${userName}!`);
+  } else if ((sign === 2) && ((firstNumber * secondNumber) !== clientAnswer)) {
+    return wrongAnswer(clientAnswer, name, firstNumber * secondNumber);
   }
   // Commence of the third round
   firstNumber = Math.floor(Math.random() * 101);
   secondNumber = Math.floor(Math.random() * 101);
   sign = Math.floor(Math.random() * 3);
-
   if (sign === 0) {
-    console.log(`Question: ${firstNumber} + ${secondNumber}`);
-    ans = readlineSync.question(`Your answer:`);
+    console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
+    clientAnswer = answer();
   } else if (sign === 1) {
-    console.log(`Question: ${firstNumber} - ${secondNumber}`);
-    ans = readlineSync.question(`Your answer:`);
+    console.log(gameQuestion(`${firstNumber} - ${secondNumber}`));
+    clientAnswer = answer();
   } else if (sign === 2) {
-    console.log(`Question: ${firstNumber} * ${secondNumber}`);
-    ans = readlineSync.question(`Your answer:`);
+    console.log(gameQuestion(`${firstNumber} * ${secondNumber}`));
+    clientAnswer = answer();
   }
-  ans *= 1;
-  if ((sign === 0) && ((firstNumber + secondNumber) === ans)) {
+  clientAnswer *= 1;
+  // Deciding whether user's answer is correct or not
+  if ((sign === 0) && ((firstNumber + secondNumber) === clientAnswer)) {
     console.log('Correct!');
-  } else if ((sign === 0) && ((firstNumber + secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-    Let's try again, ${userName}!`);
+  } else if ((sign === 0) && ((firstNumber + secondNumber) !== clientAnswer)) {
+    return wrongAnswer(clientAnswer, name, clientAnswer);
   }
-  if ((sign === 1) && ((firstNumber - secondNumber) === ans)) {
+  if ((sign === 1) && ((firstNumber - secondNumber) === clientAnswer)) {
     console.log('Correct!');
-  } else if ((sign === 1) && ((firstNumber - secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber - secondNumber}.
-        Let's try again, ${userName}!`);
+  } else if ((sign === 1) && ((firstNumber - secondNumber) !== clientAnswer)) {
+    return wrongAnswer(clientAnswer, name, firstNumber - secondNumber);
   }
-  if ((sign === 2) && ((firstNumber * secondNumber) === ans)) {
+  if ((sign === 2) && ((firstNumber * secondNumber) === clientAnswer)) {
     console.log('Correct!');
-  } else if ((sign === 2) && ((firstNumber * secondNumber) !== ans)) {
-    return console.log(`${ans} is wrong answer ;(. Correct answer was ${firstNumber * secondNumber}.
-        Let's try again, ${userName}!`);
+  } else if ((sign === 2) && ((firstNumber * secondNumber) !== clientAnswer)) {
+    return wrongAnswer(clientAnswer, name, firstNumber * secondNumber);
   }
   // Final words in case of victory
-  return console.log(`Congratulations, ${userName}! `);
+  return victory(name);
 };
 
 export default calcGame;

@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import {
   greetings, gameQuestion, answer, wrongAnswer, victory,
 } from './gameEngine.js';
