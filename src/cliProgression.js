@@ -4,9 +4,9 @@ import {
 
 // Definning the hidden number of the progression with the separate function
 const hiddenElement = (num) => {
-  let hiddenAnswer = Math.floor((Math.random() + 0.1) * 10);
+  let hiddenAnswer = Math.floor((Math.random() + 0.2) * 10);
   while (num < hiddenAnswer) {
-    hiddenAnswer = Math.floor((Math.random() + 0.1) * 10);
+    hiddenAnswer = Math.floor((Math.random() + 0.2) * 10);
   }
   return hiddenAnswer;
 };
