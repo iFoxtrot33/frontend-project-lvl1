@@ -53,7 +53,7 @@ const gameGcd = () => {
   }
   // Finding max divider
   maxDivider = max(bothArr);
-  console.log(gameQuestion(`${firstNumber}  ${secondNumber}`));
+  console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
   clientAnswer = answer();
   clientAnswer *= 1;
   if (maxDivider === clientAnswer) {
@@ -75,7 +75,7 @@ const gameGcd = () => {
     }
   }
   maxDivider = max(bothArr);
-  console.log(gameQuestion(`${firstNumber}  ${secondNumber}`));
+  console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
   clientAnswer = answer();
   clientAnswer *= 1;
   if (maxDivider === clientAnswer) {
@@ -97,7 +97,7 @@ const gameGcd = () => {
     }
   }
   maxDivider = max(bothArr);
-  console.log(gameQuestion(`${firstNumber}  ${secondNumber}`));
+  console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
   clientAnswer = answer();
   clientAnswer *= 1;
   if (maxDivider === clientAnswer) {
