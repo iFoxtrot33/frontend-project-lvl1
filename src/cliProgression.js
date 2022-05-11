@@ -22,7 +22,7 @@ const gameProgression = () => {
   // Defining a step of the progression
   let step = Math.floor((Math.random() + 0.1) * 10);
   // Defining random length of the progression
-  const arrSteps = [5, 6, 7, 8, 9, 10];
+  const arrSteps = [6, 7, 8, 9, 10];
   let randomLength = arrSteps[Math.floor(Math.random() * (arrSteps.length))];
   // The array for keeping progression numbers
   let progression = [];
