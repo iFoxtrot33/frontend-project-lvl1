@@ -1,20 +1,20 @@
-import readlineSync from 'readline-sync';
+import {
+  greetings, gameQuestion, answer, wrongAnswer, victory,
+} from './gameEngine.js';
 
 // Definning the hidden number of the progression with the separate function
 const hiddenElement = (num) => {
-  let answer = Math.floor((Math.random() + 0.1) * 10);
-  while (num < answer) {
-    answer = Math.floor((Math.random() + 0.1) * 10);
+  let hiddenAnswer = Math.floor((Math.random() + 0.1) * 10);
+  while (num < hiddenAnswer) {
+    hiddenAnswer = Math.floor((Math.random() + 0.1) * 10);
   }
-  return answer;
+  return hiddenAnswer;
 };
 
 // The progression game
 const gameProgression = () => {
-// Greetings
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName} !`);
+  // Greetings
+  const name = (greetings());
   // Gamerule
   console.log('What number is missing in the progression?');
   // Defining 1st element of the progression
@@ -42,14 +42,13 @@ const gameProgression = () => {
   // Hiding the answer in progression
   progression[hiddenAnswer] = '..';
   // Asking the client his opinion
-  console.log(`Question: ${progression.toString()} `);
-  clientAnswer = readlineSync.question(`Your answer: `);
+  console.log(gameQuestion(`${progression.toString()}`));
+  clientAnswer = answer();
   // Also converting our answer and client answer to from strings to numbers
   if ((clientAnswer * 1) === (ans * 1)) {
     console.log('Correct!');
   } else {
-    return console.log(`${clientAnswer} is wrong answer ;(. Correct answer was ${ans}.
-    Let's try again, ${userName}!`);
+    return wrongAnswer(clientAnswer, name, ans);
   }
   // Second round
   randomLength = arrSteps[Math.floor(Math.random() * (arrSteps.length))];
@@ -64,13 +63,12 @@ const gameProgression = () => {
   hiddenAnswer = hiddenElement(randomLength) - 1;
   ans = progression[hiddenAnswer];
   progression[hiddenAnswer] = '..';
-  console.log(`Question: ${progression.toString()} `);
-  clientAnswer = readlineSync.question(`Your answer: `);
+  console.log(gameQuestion(`${progression.toString()}`));
+  clientAnswer = answer();
   if ((clientAnswer * 1) === (ans * 1)) {
     console.log('Correct!');
   } else {
-    return console.log(`${clientAnswer} is wrong answer ;(. Correct answer was ${ans}.
-    Let's try again, ${userName}!`);
+    return wrongAnswer(clientAnswer, name, ans);
   }
   // Third round
   randomLength = arrSteps[Math.floor(Math.random() * (arrSteps.length))];
@@ -85,15 +83,14 @@ const gameProgression = () => {
   hiddenAnswer = hiddenElement(randomLength) - 1;
   ans = progression[hiddenAnswer];
   progression[hiddenAnswer] = '..';
-  console.log(`Question: ${progression.toString()} `);
-  clientAnswer = readlineSync.question(`Your answer: `);
+  console.log(gameQuestion(`${progression.toString()}`));
+  clientAnswer = answer();
   if ((clientAnswer * 1) === (ans * 1)) {
     console.log('Correct!');
   } else {
-    return console.log(`${clientAnswer} is wrong answer ;(. Correct answer was ${ans}.
-    Let's try again, ${userName}!`);
+    return wrongAnswer(clientAnswer, name, ans);
   }
-  return console.log(`Congratulations, ${userName}!`);
+  return victory(name);
 };
 
 export default gameProgression;
