@@ -1,4 +1,8 @@
 import readlineSync from 'readline-sync';
+import {
+  greetings, gameQuestion, answer, wrongAnswer, victory,
+} from './gameEngine.js';
+
 // Function to find max value in array
 const max = (arr) => {
   let temp;
@@ -10,6 +14,7 @@ const max = (arr) => {
   }
   return m;
 };
+
 // Function to find divider
 const calcDividers = (num) => {
   const arr = [];
@@ -20,12 +25,10 @@ const calcDividers = (num) => {
   }
   return arr;
 };
+
 // Commence the game
 const gameGcd = () => {
-// Greetings
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName} !`);
+  const name = (greetings());
   // Gamerule
   console.log('Find the greatest common divisor of given numbers.');
   // All numbers are in range from 1 to 100
@@ -50,15 +53,13 @@ const gameGcd = () => {
   }
   // Finding max divider
   maxDivider = max(bothArr);
-  console.log(`Question: ${firstNumber}  ${secondNumber}`);
-  clientAnswer = readlineSync.question(`Your answer: `);
-  // Converting string to the number
+  console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
+  clientAnswer = answer();
   clientAnswer *= 1;
   if (maxDivider === clientAnswer) {
     console.log('Correct!');
   } else {
-    return console.log(`${clientAnswer} is wrong answer ;(. Correct answer was ${maxDivider}.
-    Let's try again, ${userName}`);
+    return wrongAnswer(clientAnswer, name, maxDivider);
   }
   // Commence of the second round
   firstNumber = Math.floor((Math.random() + 0.01) * 100);
@@ -74,14 +75,13 @@ const gameGcd = () => {
     }
   }
   maxDivider = max(bothArr);
-  console.log(`Question: ${firstNumber}  ${secondNumber}`);
-  clientAnswer = readlineSync.question(`Your answer: `);
+  console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
+  clientAnswer = answer();
   clientAnswer *= 1;
   if (maxDivider === clientAnswer) {
     console.log('Correct!');
   } else {
-    return console.log(`${clientAnswer} is wrong answer ;(. Correct answer was ${maxDivider}.
-      Let's try again, ${userName}`);
+    return wrongAnswer(clientAnswer, name, maxDivider);
   }
   // Commence of the third round
   firstNumber = Math.floor((Math.random() + 0.01) * 100);
@@ -97,17 +97,16 @@ const gameGcd = () => {
     }
   }
   maxDivider = max(bothArr);
-  console.log(`Question: ${firstNumber}  ${secondNumber}`);
-  clientAnswer = readlineSync.question(`Your answer: `);
+  console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
+  clientAnswer = answer();
   clientAnswer *= 1;
   if (maxDivider === clientAnswer) {
     console.log('Correct!');
   } else {
-    return console.log(`${clientAnswer} is wrong answer ;(. Correct answer was ${maxDivider}.
-      Let's try again, ${userName}`);
+    return wrongAnswer(clientAnswer, name, maxDivider);
   }
   // Final words in case of victory
-  return console.log(`Congratulations, ${userName}!`);
+  return victory(name);
 };
 
 export default gameGcd;
