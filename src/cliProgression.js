@@ -42,7 +42,7 @@ const gameProgression = () => {
   // Hiding the answer in progression
   progression[hiddenAnswer] = '..';
   // Asking the client his opinion
-  console.log(gameQuestion(`${progression.toString()}`));
+  console.log(gameQuestion(`${progression.join(' ')}`));
   clientAnswer = answer();
   // Also converting our answer and client answer to from strings to numbers
   if ((clientAnswer * 1) === (ans * 1)) {
@@ -63,7 +63,7 @@ const gameProgression = () => {
   hiddenAnswer = hiddenElement(randomLength) - 1;
   ans = progression[hiddenAnswer];
   progression[hiddenAnswer] = '..';
-  console.log(gameQuestion(`${progression.toString()}`));
+  console.log(gameQuestion(`${progression.join(' ')}`));
   clientAnswer = answer();
   if ((clientAnswer * 1) === (ans * 1)) {
     console.log('Correct!');
@@ -83,7 +83,7 @@ const gameProgression = () => {
   hiddenAnswer = hiddenElement(randomLength) - 1;
   ans = progression[hiddenAnswer];
   progression[hiddenAnswer] = '..';
-  console.log(gameQuestion(`${progression.toString()}`));
+  console.log(gameQuestion(`${progression.join(' ')}`));
   clientAnswer = answer();
   if ((clientAnswer * 1) === (ans * 1)) {
     console.log('Correct!');
