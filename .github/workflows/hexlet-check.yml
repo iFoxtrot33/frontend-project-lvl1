@@ -25,9 +25,3 @@ jobs:
         uses: hexlet/project-action@release
         with:
           hexlet-id: ${{ secrets.HEXLET_ID }}
-rules:
-  no-console: 0
-  no-unused-vars: off
-  no-alert: off
-  no-undef: off
-  quotes: off
