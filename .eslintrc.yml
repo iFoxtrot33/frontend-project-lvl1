@@ -11,8 +11,8 @@ env:
 
 
 extends:
-  - 'airbnb-base'
-  - 'plugin:jest/recommended'
+  - 'eslint-config-airbnb-base'
+  - 'eslint-plugin-jest'
 
 parserOptions:
   ecmaVersion: latest
