@@ -21,8 +21,5 @@ rules:
   no-alert: off
   no-undef: off
   quotes: off
-  import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
-    - error
-    - ignorePackages
-    - js: always
+  import/extensions: off
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]

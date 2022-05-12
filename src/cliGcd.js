@@ -58,7 +58,7 @@ const runGameGcd = () => {
   if (maxDivider === clientAnswer) {
     console.log('Correct!');
   } else {
-    return wrongAnswer(clientAnswer, name, maxDivider);
+    return console.log(wrongAnswer(clientAnswer, name, maxDivider));
   }
   // Commence of the second round
   firstNumber = Math.floor((Math.random() + 0.01) * 100);
@@ -80,7 +80,7 @@ const runGameGcd = () => {
   if (maxDivider === clientAnswer) {
     console.log('Correct!');
   } else {
-    return wrongAnswer(clientAnswer, name, maxDivider);
+    return console.log(wrongAnswer(clientAnswer, name, maxDivider));
   }
   // Commence of the third round
   firstNumber = Math.floor((Math.random() + 0.01) * 100);
@@ -102,11 +102,10 @@ const runGameGcd = () => {
   if (maxDivider === clientAnswer) {
     console.log('Correct!');
   } else {
-    return wrongAnswer(clientAnswer, name, maxDivider);
+    return console.log(wrongAnswer(clientAnswer, name, maxDivider));
   }
   // Final words in case of victory
   return victory(name);
 };
-console.log(runGameGcd());
 
 export default runGameGcd();
