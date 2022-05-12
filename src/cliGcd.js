@@ -105,7 +105,7 @@ const runGameGcd = () => {
     return console.log(wrongAnswer(clientAnswer, name, maxDivider));
   }
   // Final words in case of victory
-  return victory(name);
+  return console.log(victory(name));
 };
 
 export default runGameGcd();
