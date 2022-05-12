@@ -3,7 +3,7 @@ import {
 } from './gameEngine.js';
 
 // Function to find max value in array
-const max = (arr) => {
+const findMax = (arr) => {
   let temp;
   let m = arr[0];
   for (let i = 0; i < arr.length; i += 1) {
@@ -26,7 +26,7 @@ const calcDividers = (num) => {
 };
 
 // Commence the game
-const gameGcd = () => {
+const runGameGcd = () => {
   const name = (greetings());
   // Gamerule
   console.log('Find the greatest common divisor of given numbers.');
@@ -51,7 +51,7 @@ const gameGcd = () => {
     }
   }
   // Finding max divider
-  maxDivider = max(bothArr);
+  maxDivider = findMax(bothArr);
   console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
   clientAnswer = answer();
   clientAnswer *= 1;
@@ -73,7 +73,7 @@ const gameGcd = () => {
       bothArr.push(firstArr[i]);
     }
   }
-  maxDivider = max(bothArr);
+  maxDivider = findMax(bothArr);
   console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
   clientAnswer = answer();
   clientAnswer *= 1;
@@ -95,7 +95,7 @@ const gameGcd = () => {
       bothArr.push(firstArr[i]);
     }
   }
-  maxDivider = max(bothArr);
+  maxDivider = findMax(bothArr);
   console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
   clientAnswer = answer();
   clientAnswer *= 1;
@@ -107,5 +107,6 @@ const gameGcd = () => {
   // Final words in case of victory
   return victory(name);
 };
+console.log(runGameGcd());
 
-export default gameGcd;
+export default runGameGcd();

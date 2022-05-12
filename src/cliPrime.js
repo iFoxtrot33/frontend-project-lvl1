@@ -3,7 +3,7 @@ import {
 } from './gameEngine.js';
 
 // Checking wheather the number is prime or not
-const prime = (num) => {
+const isPrime = (num) => {
   const arr = [];
   for (let i = 0; i <= num; i += 1) {
     if (num % i === 0) {
@@ -16,7 +16,7 @@ const prime = (num) => {
   return 'no';
 };
 
-const gamePrime = () => {
+const runGamePrime = () => {
   // Greetings
   const name = (greetings());
   // Gamerule
@@ -28,7 +28,7 @@ const gamePrime = () => {
   // Showing the number to the player
   console.log(gameQuestion(`${number}`));
   // Checking whether the number is prime or not
-  ans = prime(number);
+  ans = isPrime(number);
   // Taking answer from the player
   clientAnswer = answer();
   if (clientAnswer === ans) {
@@ -39,16 +39,17 @@ const gamePrime = () => {
   // Commencement of the second round
   number = Math.floor((Math.random() + 0.1) * 1000);
   console.log(gameQuestion(`${number}`));
-  ans = prime(number);
+  ans = isPrime(number);
   clientAnswer = answer();
   if (clientAnswer === ans) {
     console.log('Correct!');
   } else {
     return wrongAnswer(clientAnswer, name, ans);
   }
+  // Commencement of the third round
   number = Math.floor((Math.random() + 0.1) * 1000);
   console.log(gameQuestion(`${number}`));
-  ans = prime(number);
+  ans = isPrime(number);
   clientAnswer = answer();
   if (clientAnswer === ans) {
     console.log('Correct!');
@@ -57,5 +58,6 @@ const gamePrime = () => {
   }
   return victory(name);
 };
+console.log(runGamePrime());
 
-export default gamePrime;
+export default runGamePrime;

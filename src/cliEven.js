@@ -2,7 +2,7 @@ import {
   greetings, gameQuestion, answer, wrongAnswer, victory,
 } from './gameEngine.js';
 
-const even = () => {
+const runBrainEven = () => {
   const name = (greetings());
   // Gamerule
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -60,5 +60,6 @@ const even = () => {
   }
   return victory(name);
 };
+console.log(runBrainEven());
 
-export default even;
+export default runBrainEven;

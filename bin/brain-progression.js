@@ -1,5 +1,3 @@
 #!/usr/bin/env node
 
-import gameProgression from '../src/cliProgression.js';
-
-console.log(gameProgression());
+import runGameProgression from '../src/cliProgression.js';

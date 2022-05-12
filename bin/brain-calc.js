@@ -1,5 +1,3 @@
 #!/usr/bin/env node
 
-import calcGame from '../src/cliCalc.js';
-
-console.log(calcGame());
+import runCalcGame from '../src/cliCalc.js';

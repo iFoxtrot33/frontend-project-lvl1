@@ -12,7 +12,7 @@ const hiddenElement = (num) => {
 };
 
 // The progression game
-const gameProgression = () => {
+const runGameProgression = () => {
   // Greetings
   const name = (greetings());
   // Gamerule
@@ -92,5 +92,6 @@ const gameProgression = () => {
   }
   return victory(name);
 };
+console.log(runGameProgression());
 
-export default gameProgression;
+export default runGameProgression;

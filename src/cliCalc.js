@@ -2,7 +2,7 @@ import {
   greetings, gameQuestion, answer, wrongAnswer, victory,
 } from './gameEngine.js';
 
-const calcGame = () => {
+const runCalcGame = () => {
   // First number with the range from 0 to 100
   let firstNumber = Math.floor(Math.random() * 101);
   // Second number with the range from 0 to 100
@@ -108,5 +108,6 @@ const calcGame = () => {
   // Final words in case of victory
   return victory(name);
 };
+console.log(runCalcGame());
 
-export default calcGame;
+export default runCalcGame;
