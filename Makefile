@@ -15,6 +15,7 @@ brain-prime:
 	node bin/brain-prime.js
 
 make-lint:
+    npm install eslint-config-airbnb-base
 	npx eslint .
 
 publish:
