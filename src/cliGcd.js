@@ -1,29 +1,6 @@
 import {
-  greetings, gameQuestion, answer, wrongAnswer, victory,
+  greetings, gameQuestion, answer, wrongAnswer, victory, findMax, calcDividers,
 } from './gameEngine.js';
-
-// Function to find max value in array
-const findMax = (arr) => {
-  let temp;
-  let m = arr[0];
-  for (let i = 0; i < arr.length; i += 1) {
-    if (m < arr[i]) {
-      m = arr[i];
-    }
-  }
-  return m;
-};
-
-// Function to find divider
-const calcDividers = (num) => {
-  const arr = [];
-  for (let i = 0; i <= num; i += 1) {
-    if ((num % i) === 0) {
-      arr.push(i);
-    }
-  }
-  return arr;
-};
 
 // Commence the game
 const runGameGcd = () => {
@@ -108,4 +85,4 @@ const runGameGcd = () => {
   return console.log(victory(name));
 };
 
-export default runGameGcd();
+export default runGameGcd;

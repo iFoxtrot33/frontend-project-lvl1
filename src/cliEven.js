@@ -60,6 +60,5 @@ const runBrainEven = () => {
   }
   return victory(name);
 };
-console.log(runBrainEven());
 
 export default runBrainEven;

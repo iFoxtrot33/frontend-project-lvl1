@@ -1,15 +1,6 @@
 import {
-  greetings, gameQuestion, answer, wrongAnswer, victory,
+  greetings, gameQuestion, answer, wrongAnswer, victory, hiddenElement,
 } from './gameEngine.js';
-
-// Definning the hidden number of the progression with the separate function
-const hiddenElement = (num) => {
-  let hiddenAnswer = Math.floor((Math.random() + 0.2) * 10);
-  while (num < hiddenAnswer) {
-    hiddenAnswer = Math.floor((Math.random() + 0.2) * 10);
-  }
-  return hiddenAnswer;
-};
 
 // The progression game
 const runGameProgression = () => {
@@ -92,6 +83,5 @@ const runGameProgression = () => {
   }
   return victory(name);
 };
-console.log(runGameProgression());
 
 export default runGameProgression;

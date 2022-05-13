@@ -58,6 +58,5 @@ const runGamePrime = () => {
   }
   return victory(name);
 };
-console.log(runGamePrime());
 
 export default runGamePrime;

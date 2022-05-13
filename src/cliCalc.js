@@ -108,6 +108,5 @@ const runCalcGame = () => {
   // Final words in case of victory
   return victory(name);
 };
-console.log(runCalcGame());
 
 export default runCalcGame;

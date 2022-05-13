@@ -6,6 +6,5 @@ const runGreetings = () => {
   console.log(`Hello, ${userName}!`);
   return userName;
 };
-console.log(runGreetings());
 
 export default runGreetings;
