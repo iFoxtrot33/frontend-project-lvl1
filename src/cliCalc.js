@@ -1,6 +1,6 @@
 import {
   greetings, gameQuestion, answer, wrongAnswer, victory,
-} from './gameEngine.js';
+} from '../helpers.js';
 
 const runCalcGame = () => {
   // First number with the range from 0 to 100

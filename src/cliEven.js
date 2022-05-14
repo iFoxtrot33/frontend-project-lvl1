@@ -1,6 +1,6 @@
 import {
   greetings, gameQuestion, answer, wrongAnswer, victory,
-} from './gameEngine.js';
+} from '../helpers.js';
 
 const runBrainEven = () => {
   const name = (greetings());

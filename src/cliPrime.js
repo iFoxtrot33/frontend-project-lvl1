@@ -1,6 +1,6 @@
 import {
   greetings, gameQuestion, answer, wrongAnswer, victory,
-} from './gameEngine.js';
+} from '../helpers.js';
 
 // Checking wheather the number is prime or not
 const isPrime = (num) => {

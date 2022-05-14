@@ -1,6 +1,6 @@
 import {
   greetings, gameQuestion, answer, wrongAnswer, victory, findMax, calcDividers,
-} from './gameEngine.js';
+} from '../helpers.js';
 
 // Commence the game
 const runGameGcd = () => {
