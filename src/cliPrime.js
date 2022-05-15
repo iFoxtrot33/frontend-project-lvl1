@@ -1,8 +1,9 @@
 import {
-  greetings, gameQuestion, answer, wrongAnswer, victory,
+  greetings, gameQuestion, answer, victory, makeRandomNoZero,
 } from '../helpers.js';
 
-// Checking wheather the number is prime or not
+import startRound from './game-engine.js';
+
 const isPrime = (num) => {
   const arr = [];
   for (let i = 0; i <= num; i += 1) {
@@ -17,44 +18,40 @@ const isPrime = (num) => {
 };
 
 const runGamePrime = () => {
-  // Greetings
   const name = (greetings());
-  // Gamerule
   console.log('"yes" if given number is prime. Otherwise answer "no"');
-  // Numbers will be in range from 1 to 1100
-  let number = Math.floor((Math.random() + 0.1) * 1000);
+  let number = makeRandomNoZero(1000);
   let clientAnswer;
   let ans;
-  // Showing the number to the player
+  let temp;
   console.log(gameQuestion(`${number}`));
-  // Checking whether the number is prime or not
   ans = isPrime(number);
-  // Taking answer from the player
   clientAnswer = answer();
-  if (clientAnswer === ans) {
-    console.log('Correct!');
+  temp = startRound(clientAnswer, name, ans);
+  if (temp.length === 8) {
+    console.log(temp);
   } else {
-    return wrongAnswer(clientAnswer, name, ans);
+    return temp;
   }
-  // Commencement of the second round
-  number = Math.floor((Math.random() + 0.1) * 1000);
+  number = makeRandomNoZero(100);
   console.log(gameQuestion(`${number}`));
   ans = isPrime(number);
   clientAnswer = answer();
-  if (clientAnswer === ans) {
-    console.log('Correct!');
+  temp = startRound(clientAnswer, name, ans);
+  if (temp.length === 8) {
+    console.log(temp);
   } else {
-    return wrongAnswer(clientAnswer, name, ans);
+    return temp;
   }
-  // Commencement of the third round
-  number = Math.floor((Math.random() + 0.1) * 1000);
+  number = makeRandomNoZero(1000);
   console.log(gameQuestion(`${number}`));
   ans = isPrime(number);
   clientAnswer = answer();
-  if (clientAnswer === ans) {
-    console.log('Correct!');
+  temp = startRound(clientAnswer, name, ans);
+  if (temp.length === 8) {
+    console.log(temp);
   } else {
-    return wrongAnswer(clientAnswer, name, ans);
+    return temp;
   }
   return victory(name);
 };

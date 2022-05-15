@@ -49,3 +49,5 @@ export const hiddenElement = (num) => {
 };
 
 export const makeRandom = (num) => Math.floor(Math.random() * num);
+
+export const makeRandomNoZero = (num) => Math.floor((Math.random() + 0.1) * num);
