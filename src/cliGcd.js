@@ -1,5 +1,5 @@
 import {
-  greetings, gameQuestion, answer, makeRandom, victory, findMax, calcDividers,
+  greetings, gameQuestion, answer, makeRandomNoZero, victory, findMax, calcDividers,
 } from '../helpers.js';
 
 import startRound from './game-engine.js';
@@ -7,8 +7,8 @@ import startRound from './game-engine.js';
 const runGameGcd = () => {
   const name = (greetings());
   console.log('Find the greatest common divisor of given numbers.');
-  let firstNumber = makeRandom(100);
-  let secondNumber = makeRandom(100);
+  let firstNumber = makeRandomNoZero(100);
+  let secondNumber = makeRandomNoZero(100);
   let firstArr = [];
   let secondArr = [];
   let bothArr = [];
@@ -33,8 +33,8 @@ const runGameGcd = () => {
     return temp;
   }
   // Commence of the second round
-  firstNumber = makeRandom(100);
-  secondNumber = makeRandom(100);
+  firstNumber = makeRandomNoZero(100);
+  secondNumber = makeRandomNoZero(100);
   firstArr = [];
   secondArr = [];
   firstArr = calcDividers(firstNumber);
@@ -55,8 +55,8 @@ const runGameGcd = () => {
   } else {
     return temp;
   }
-  firstNumber = makeRandom(100);
-  secondNumber = makeRandom(100);
+  firstNumber = makeRandomNoZero(100);
+  secondNumber = makeRandomNoZero(100);
   firstArr = [];
   secondArr = [];
   firstArr = calcDividers(firstNumber);
