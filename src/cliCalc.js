@@ -1,20 +1,17 @@
 import {
-  greetings, gameQuestion, answer, wrongAnswer, victory,
+  greetings, gameQuestion, answer, makeRandom, victory,
 } from '../helpers.js';
 
+import startRound from './game-engine.js';
+
 const runCalcGame = () => {
-  // First number with the range from 0 to 100
-  let firstNumber = Math.floor(Math.random() * 101);
-  // Second number with the range from 0 to 100
-  let secondNumber = Math.floor(Math.random() * 101);
-  // Range for math sign from 0 to 2 (+-*)
-  let sign = Math.floor(Math.random() * 3);
-  // For users input
+  let firstNumber = makeRandom(101);
+  let secondNumber = makeRandom(101);
+  let sign = makeRandom(3);
   let clientAnswer = 0;
-  // Greetings
+  let temp;
   const name = (greetings());
   console.log('What is the result of the expression?');
-  // Chosing the sign of expression and taking user's answer
   if (sign === 0) {
     console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
     clientAnswer = answer();
@@ -26,86 +23,81 @@ const runCalcGame = () => {
     clientAnswer = answer();
   }
   clientAnswer *= 1;
-  // Deciding whether user's answer is correct or not
-  if ((sign === 0) && ((firstNumber + secondNumber) === clientAnswer)) {
-    console.log('Correct!');
-  } else if ((sign === 0) && ((firstNumber + secondNumber) !== clientAnswer)) {
-    return wrongAnswer(clientAnswer, name, clientAnswer);
-  }
-  if ((sign === 1) && ((firstNumber - secondNumber) === clientAnswer)) {
-    console.log('Correct!');
-  } else if ((sign === 1) && ((firstNumber - secondNumber) !== clientAnswer)) {
-    return wrongAnswer(clientAnswer, name, firstNumber - secondNumber);
-  }
-  if ((sign === 2) && ((firstNumber * secondNumber) === clientAnswer)) {
-    console.log('Correct!');
-  } else if ((sign === 2) && ((firstNumber * secondNumber) !== clientAnswer)) {
-    return wrongAnswer(clientAnswer, name, firstNumber * secondNumber);
-  }
-  // First round completed. In case if the user is corret we continue the game
-  // Commence of the second round
-  firstNumber = Math.floor(Math.random() * 101);
-  secondNumber = Math.floor(Math.random() * 101);
-  sign = Math.floor(Math.random() * 3);
   if (sign === 0) {
-    console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
-    clientAnswer = answer();
-  } else if (sign === 1) {
-    console.log(gameQuestion(`${firstNumber} - ${secondNumber}`));
-    clientAnswer = answer();
-  } else if (sign === 2) {
-    console.log(gameQuestion(`${firstNumber} * ${secondNumber}`));
-    clientAnswer = answer();
+    temp = startRound(clientAnswer, name, firstNumber + secondNumber);
   }
-  clientAnswer *= 1;
-  // Deciding whether user's answer is correct or not
-  if ((sign === 0) && ((firstNumber + secondNumber) === clientAnswer)) {
-    console.log('Correct!');
-  } else if ((sign === 0) && ((firstNumber + secondNumber) !== clientAnswer)) {
-    return wrongAnswer(clientAnswer, name, clientAnswer);
+  if (sign === 1) {
+    temp = startRound(clientAnswer, name, firstNumber - secondNumber);
   }
-  if ((sign === 1) && ((firstNumber - secondNumber) === clientAnswer)) {
-    console.log('Correct!');
-  } else if ((sign === 1) && ((firstNumber - secondNumber) !== clientAnswer)) {
-    return wrongAnswer(clientAnswer, name, firstNumber - secondNumber);
+  if (sign === 2) {
+    temp = startRound(clientAnswer, name, firstNumber * secondNumber);
   }
-  if ((sign === 2) && ((firstNumber * secondNumber) === clientAnswer)) {
-    console.log('Correct!');
-  } else if ((sign === 2) && ((firstNumber * secondNumber) !== clientAnswer)) {
-    return wrongAnswer(clientAnswer, name, firstNumber * secondNumber);
+  if (temp.length === 8) {
+    console.log(temp);
+  } else {
+    return temp;
   }
-  // Commence of the third round
-  firstNumber = Math.floor(Math.random() * 101);
-  secondNumber = Math.floor(Math.random() * 101);
-  sign = Math.floor(Math.random() * 3);
-  if (sign === 0) {
-    console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
-    clientAnswer = answer();
-  } else if (sign === 1) {
-    console.log(gameQuestion(`${firstNumber} - ${secondNumber}`));
-    clientAnswer = answer();
-  } else if (sign === 2) {
-    console.log(gameQuestion(`${firstNumber} * ${secondNumber}`));
-    clientAnswer = answer();
+  if (temp.length === 8) {
+    firstNumber = makeRandom(101);
+    secondNumber = makeRandom(101);
+    sign = makeRandom(3);
+    if (sign === 0) {
+      console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
+      clientAnswer = answer();
+    } else if (sign === 1) {
+      console.log(gameQuestion(`${firstNumber} - ${secondNumber}`));
+      clientAnswer = answer();
+    } else if (sign === 2) {
+      console.log(gameQuestion(`${firstNumber} * ${secondNumber}`));
+      clientAnswer = answer();
+    }
+    clientAnswer *= 1;
+    if (sign === 0) {
+      temp = startRound(clientAnswer, name, firstNumber + secondNumber);
+    }
+    if (sign === 1) {
+      temp = startRound(clientAnswer, name, firstNumber - secondNumber);
+    }
+    if (sign === 2) {
+      temp = startRound(clientAnswer, name, firstNumber * secondNumber);
+    }
+    if (temp.length === 8) {
+      console.log(temp);
+    } else {
+      return temp;
+    }
   }
-  clientAnswer *= 1;
-  // Deciding whether user's answer is correct or not
-  if ((sign === 0) && ((firstNumber + secondNumber) === clientAnswer)) {
-    console.log('Correct!');
-  } else if ((sign === 0) && ((firstNumber + secondNumber) !== clientAnswer)) {
-    return wrongAnswer(clientAnswer, name, clientAnswer);
+
+  if (temp.length === 8) {
+    firstNumber = makeRandom(101);
+    secondNumber = makeRandom(101);
+    sign = makeRandom(3);
+    if (sign === 0) {
+      console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
+      clientAnswer = answer();
+    } else if (sign === 1) {
+      console.log(gameQuestion(`${firstNumber} - ${secondNumber}`));
+      clientAnswer = answer();
+    } else if (sign === 2) {
+      console.log(gameQuestion(`${firstNumber} * ${secondNumber}`));
+      clientAnswer = answer();
+    }
+    clientAnswer *= 1;
+    if (sign === 0) {
+      temp = startRound(clientAnswer, name, firstNumber + secondNumber);
+    }
+    if (sign === 1) {
+      temp = startRound(clientAnswer, name, firstNumber - secondNumber);
+    }
+    if (sign === 2) {
+      temp = startRound(clientAnswer, name, firstNumber * secondNumber);
+    }
+    if (temp.length === 8) {
+      console.log(temp);
+    } else {
+      return temp;
+    }
   }
-  if ((sign === 1) && ((firstNumber - secondNumber) === clientAnswer)) {
-    console.log('Correct!');
-  } else if ((sign === 1) && ((firstNumber - secondNumber) !== clientAnswer)) {
-    return wrongAnswer(clientAnswer, name, firstNumber - secondNumber);
-  }
-  if ((sign === 2) && ((firstNumber * secondNumber) === clientAnswer)) {
-    console.log('Correct!');
-  } else if ((sign === 2) && ((firstNumber * secondNumber) !== clientAnswer)) {
-    return wrongAnswer(clientAnswer, name, firstNumber * secondNumber);
-  }
-  // Final words in case of victory
   return victory(name);
 };
 
