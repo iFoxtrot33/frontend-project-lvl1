@@ -14,9 +14,9 @@ const runBrainEven = () => {
   let clientAnswer = answer();
   let temp;
   let ans;
-  if ((secondNumber % 2) === 0) {
+  if ((firstNumber % 2) === 0) {
     ans = 'yes';
-  } else if ((secondNumber % 2) !== 0) {
+  } else {
     ans = 'no';
   }
   temp = startRound(clientAnswer, name, ans);
@@ -29,7 +29,7 @@ const runBrainEven = () => {
   clientAnswer = answer();
   if ((secondNumber % 2) === 0) {
     ans = 'yes';
-  } else if ((secondNumber % 2) !== 0) {
+  } else {
     ans = 'no';
   }
   temp = startRound(clientAnswer, name, ans);
@@ -42,7 +42,7 @@ const runBrainEven = () => {
   clientAnswer = answer();
   if ((thirdNumber % 2) === 0) {
     ans = 'yes';
-  } else if ((thirdNumber % 2) !== 0) {
+  } else {
     ans = 'no';
   }
   temp = startRound(clientAnswer, name, ans);
