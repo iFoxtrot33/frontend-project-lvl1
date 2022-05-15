@@ -5,12 +5,12 @@ import {
 import startRound from './game-engine.js';
 
 const runCalcGame = () => {
-  let firstNumber = makeRandom(101);
-  let secondNumber = makeRandom(101);
-  let thirdNumber;
-  let forthNumber;
-  let fifthNumber;
-  let sixNumber;
+  const firstNumber = makeRandom(101);
+  const secondNumber = makeRandom(101);
+  const thirdNumber = makeRandom(101);
+  const forthNumber = makeRandom(101);
+  const fifthNumber = makeRandom(101);
+  const sixNumber = makeRandom(101);
   let sign = makeRandom(3);
   let clientAnswer = 0;
   let temp;
@@ -42,8 +42,6 @@ const runCalcGame = () => {
     return temp;
   }
   if (temp.length === 8) {
-    thirdNumber = makeRandom(101);
-    forthNumber = makeRandom(101);
     sign = makeRandom(3);
     if (sign === 0) {
       console.log(gameQuestion(`${thirdNumber} + ${forthNumber}`));
@@ -73,8 +71,6 @@ const runCalcGame = () => {
   }
 
   if (temp.length === 8) {
-    fifthNumber = makeRandom(101);
-    sixNumber = makeRandom(101);
     sign = makeRandom(3);
     if (sign === 0) {
       console.log(gameQuestion(`${fifthNumber} + ${sixNumber}`));
