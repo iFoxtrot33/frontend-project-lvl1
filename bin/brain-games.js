@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import runGreetings from '../src/cli.js';
+import { greetings } from '../helpers.js';
 
-console.log(runGreetings());
+console.log(greetings());
