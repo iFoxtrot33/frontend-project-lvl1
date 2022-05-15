@@ -14,10 +14,10 @@ const runBrainEven = () => {
   let clientAnswer = answer();
   let temp;
   let ans;
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
+  if ((secondNumber % 2) === 0) {
+    ans = 'yes';
+  } else if ((secondNumber % 2) !== 0) {
+    ans = 'no';
   }
   temp = startRound(clientAnswer, name, ans);
   if (temp.length === 8) {
