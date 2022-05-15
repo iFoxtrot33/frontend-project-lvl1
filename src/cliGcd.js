@@ -1,45 +1,40 @@
 import {
-  greetings, gameQuestion, answer, wrongAnswer, victory, findMax, calcDividers,
+  greetings, gameQuestion, answer, makeRandom, victory, findMax, calcDividers,
 } from '../helpers.js';
 
-// Commence the game
+import startRound from './game-engine.js';
+
 const runGameGcd = () => {
   const name = (greetings());
-  // Gamerule
   console.log('Find the greatest common divisor of given numbers.');
-  // All numbers are in range from 1 to 100
-  let firstNumber = Math.floor((Math.random() + 0.01) * 100);
-  let secondNumber = Math.floor((Math.random() + 0.01) * 100);
-  // Arreys for first and second number's dividers
+  let firstNumber = makeRandom(100);
+  let secondNumber = makeRandom(100);
   let firstArr = [];
   let secondArr = [];
-  // Arrey for the for the common dividers
   let bothArr = [];
   let maxDivider;
   let clientAnswer;
-  // Starting the loop to find all dividers for the first number
+  let temp;
   firstArr = calcDividers(firstNumber);
-  // Starting the loop to find all dividers for the second number
   secondArr = calcDividers(secondNumber);
-  // Starting the loop to find all common dividers
   for (let i = 0; i < firstArr.length; i += 1) {
     if (secondArr.includes(firstArr[i]) === true) {
       bothArr.push(firstArr[i]);
     }
   }
-  // Finding max divider
   maxDivider = findMax(bothArr);
   console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
   clientAnswer = answer();
   clientAnswer *= 1;
-  if (maxDivider === clientAnswer) {
-    console.log('Correct!');
+  temp = startRound(clientAnswer, name, maxDivider);
+  if (temp.length === 8) {
+    console.log(temp);
   } else {
-    return console.log(wrongAnswer(clientAnswer, name, maxDivider));
+    return temp;
   }
   // Commence of the second round
-  firstNumber = Math.floor((Math.random() + 0.01) * 100);
-  secondNumber = Math.floor((Math.random() + 0.01) * 100);
+  firstNumber = makeRandom(100);
+  secondNumber = makeRandom(100);
   firstArr = [];
   secondArr = [];
   firstArr = calcDividers(firstNumber);
@@ -54,14 +49,14 @@ const runGameGcd = () => {
   console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
   clientAnswer = answer();
   clientAnswer *= 1;
-  if (maxDivider === clientAnswer) {
-    console.log('Correct!');
+  temp = startRound(clientAnswer, name, maxDivider);
+  if (temp.length === 8) {
+    console.log(temp);
   } else {
-    return console.log(wrongAnswer(clientAnswer, name, maxDivider));
+    return temp;
   }
-  // Commence of the third round
-  firstNumber = Math.floor((Math.random() + 0.01) * 100);
-  secondNumber = Math.floor((Math.random() + 0.01) * 100);
+  firstNumber = makeRandom(100);
+  secondNumber = makeRandom(100);
   firstArr = [];
   secondArr = [];
   firstArr = calcDividers(firstNumber);
@@ -76,13 +71,13 @@ const runGameGcd = () => {
   console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
   clientAnswer = answer();
   clientAnswer *= 1;
-  if (maxDivider === clientAnswer) {
-    console.log('Correct!');
+  temp = startRound(clientAnswer, name, maxDivider);
+  if (temp.length === 8) {
+    console.log(temp);
   } else {
-    return console.log(wrongAnswer(clientAnswer, name, maxDivider));
+    return temp;
   }
-  // Final words in case of victory
-  return console.log(victory(name));
+  return victory(name);
 };
 
 export default runGameGcd;
