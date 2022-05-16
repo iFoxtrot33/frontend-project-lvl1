@@ -1,32 +1,32 @@
 import {
-  wrongAnswer, gameQuestion, answer, victory, runGreetings,
+  runWrongAnswer, askGameQuestion, askAnswer, runVictory, runGreetings,
 } from '../helpers.js';
 
 const startGame = (first, second, third, ans1, ans2, ans3, gameRule) => {
   const userName = (runGreetings());
   console.log(gameRule);
-  console.log(gameQuestion(first));
-  let clientAnswer = answer();
+  console.log(askGameQuestion(first));
+  let clientAnswer = askAnswer();
   if ((clientAnswer) === (ans1)) {
     console.log('Correct!');
   } else {
-    return wrongAnswer(clientAnswer, userName, ans1);
+    return runWrongAnswer(clientAnswer, userName, ans1);
   }
-  console.log(gameQuestion(second));
-  clientAnswer = answer();
+  console.log(askGameQuestion(second));
+  clientAnswer = askAnswer();
   if ((clientAnswer) === (ans2)) {
     console.log('Correct!');
   } else {
-    return wrongAnswer(clientAnswer, userName, ans2);
+    return runWrongAnswer(clientAnswer, userName, ans2);
   }
-  console.log(gameQuestion(third));
-  clientAnswer = answer();
+  console.log(askGameQuestion(third));
+  clientAnswer = askAnswer();
   if ((clientAnswer) === (ans3)) {
     console.log('Correct!');
   } else {
-    return wrongAnswer(clientAnswer, userName, ans3);
+    return runWrongAnswer(clientAnswer, userName, ans3);
   }
-  return victory(userName);
+  return runVictory(userName);
 };
 
 export default startGame;

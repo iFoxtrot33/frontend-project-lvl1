@@ -7,17 +7,16 @@ export const runGreetings = () => {
   return userName;
 };
 
-export const gameQuestion = (question) => `Question: ${question}`;
+export const askGameQuestion = (question) => `Question: ${question}`;
 
-export const answer = () => readlineSync.question('Your answer: ');
+export const askAnswer = () => readlineSync.question('Your answer: ');
 
-export const wrongAnswer = (clientAnswer, userName, correctAnswer) => `
+export const runWrongAnswer = (clientAnswer, userName, correctAnswer) => `
 ${clientAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.
 Let's try again, ${userName}!`;
 
-export const victory = (userName) => `Congratulations, ${userName}!`;
+export const runVictory = (userName) => `Congratulations, ${userName}!`;
 
-// Function to find max value in array
 export const findMax = (arr) => {
   let m = arr[0];
   for (let i = 0; i < arr.length; i += 1) {
@@ -28,7 +27,6 @@ export const findMax = (arr) => {
   return m;
 };
 
-// Function to find divider
 export const calcDividers = (num) => {
   const arr = [];
   for (let k = 0; k <= num; k += 1) {
@@ -39,7 +37,6 @@ export const calcDividers = (num) => {
   return arr;
 };
 
-// Definning the hidden number of the progression with the separate function
 export const hiddenElement = (num) => {
   let hiddenAnswer = Math.floor((Math.random() + 0.2) * 10);
   while (num < hiddenAnswer) {
