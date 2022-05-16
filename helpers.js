@@ -31,9 +31,9 @@ export const findMax = (arr) => {
 // Function to find divider
 export const calcDividers = (num) => {
   const arr = [];
-  for (let i = 0; i <= num; i += 1) {
-    if ((num % i) === 0) {
-      arr.push(i);
+  for (let k = 0; k <= num; k += 1) {
+    if ((num % k) === 0) {
+      arr.push(k);
     }
   }
   return arr;

@@ -7,9 +7,9 @@ import startGame from '../src/game-engine.js';
 
 const isPrime = (num) => {
   const arr = [];
-  for (let i = 0; i <= num; i += 1) {
-    if (num % i === 0) {
-      arr.push(i);
+  for (let t = 0; t <= num; t += 1) {
+    if (num % t === 0) {
+      arr.push(t);
     }
   }
   if (arr.length === 2) {
