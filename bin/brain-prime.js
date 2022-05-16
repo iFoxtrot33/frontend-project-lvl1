@@ -1,17 +1,12 @@
 #!/usr/bin/env node
 import {
-  makeRandomNoZero,
+  makeRandomNoZero, calcDividers,
 } from '../helpers.js';
 
 import startGame from '../src/game-engine.js';
 
 const isPrime = (num) => {
-  const arr = [];
-  for (let t = 0; t <= num; t += 1) {
-    if (num % t === 0) {
-      arr.push(t);
-    }
-  }
+  const arr = calcDividers(num);
   if (arr.length === 2) {
     return 'yes';
   }
