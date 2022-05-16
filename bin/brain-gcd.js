@@ -1,21 +1,17 @@
 #!/usr/bin/env node
 import {
-  runGreetings, gameQuestion, answer, makeRandomNoZero, victory, findMax, calcDividers,
+  makeRandomNoZero, findMax, calcDividers,
 } from '../helpers.js';
 
-import startRound from '../src/game-engine.js';
+import startGame from '../src/game-engine.js';
 
 const runGameGcd = () => {
-  const name = (runGreetings());
-  console.log('Find the greatest common divisor of given numbers.');
+  const gameRule = 'Find the greatest common divisor of given numbers.';
   let firstNumber = makeRandomNoZero(100);
   let secondNumber = makeRandomNoZero(100);
   let firstArr = [];
   let secondArr = [];
   let bothArr = [];
-  let maxDivider;
-  let clientAnswer;
-  let temp;
   firstArr = calcDividers(firstNumber);
   secondArr = calcDividers(secondNumber);
   for (let i = 0; i < firstArr.length; i += 1) {
@@ -23,17 +19,8 @@ const runGameGcd = () => {
       bothArr.push(firstArr[i]);
     }
   }
-  maxDivider = findMax(bothArr);
-  console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
-  clientAnswer = answer();
-  clientAnswer *= 1;
-  temp = startRound(clientAnswer, name, maxDivider);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
-  // Commence of the second round
+  const ans1 = (findMax(bothArr)).toString();
+  const first = `${firstNumber} ${secondNumber}`;
   firstNumber = makeRandomNoZero(100);
   secondNumber = makeRandomNoZero(100);
   firstArr = [];
@@ -46,16 +33,8 @@ const runGameGcd = () => {
       bothArr.push(firstArr[i]);
     }
   }
-  maxDivider = findMax(bothArr);
-  console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
-  clientAnswer = answer();
-  clientAnswer *= 1;
-  temp = startRound(clientAnswer, name, maxDivider);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
+  const ans2 = (findMax(bothArr)).toString();
+  const second = `${firstNumber} ${secondNumber}`;
   firstNumber = makeRandomNoZero(100);
   secondNumber = makeRandomNoZero(100);
   firstArr = [];
@@ -68,17 +47,9 @@ const runGameGcd = () => {
       bothArr.push(firstArr[i]);
     }
   }
-  maxDivider = findMax(bothArr);
-  console.log(gameQuestion(`${firstNumber} ${secondNumber}`));
-  clientAnswer = answer();
-  clientAnswer *= 1;
-  temp = startRound(clientAnswer, name, maxDivider);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
-  return victory(name);
+  const ans3 = (findMax(bothArr)).toString();
+  const third = `${firstNumber} ${secondNumber}`;
+  return startGame(first, second, third, ans1, ans2, ans3, gameRule);
 };
 console.log(runGameGcd());
 

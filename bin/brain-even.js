@@ -1,58 +1,33 @@
 #!/usr/bin/env node
 import {
-  runGreetings, gameQuestion, answer, makeRandom, victory,
+  makeRandom,
 } from '../helpers.js';
-
-import startRound from '../src/game-engine.js';
+import startGame from '../src/game-engine.js';
 
 const runBrainEven = () => {
-  const name = (runGreetings());
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const firstNumber = makeRandom(100);
-  const secondNumber = makeRandom(100);
-  const thirdNumber = makeRandom(100);
-  console.log(gameQuestion(firstNumber));
-  let clientAnswer = answer();
-  let temp;
-  let ans;
-  if ((firstNumber % 2) === 0) {
-    ans = 'yes';
+  const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const first = makeRandom(100);
+  const second = makeRandom(100);
+  const third = makeRandom(100);
+  let ans1;
+  let ans2;
+  let ans3;
+  if ((first % 2) === 0) {
+    ans1 = 'yes';
   } else {
-    ans = 'no';
+    ans1 = 'no';
   }
-  temp = startRound(clientAnswer, name, ans);
-  if (temp.length === 8) {
-    console.log(temp);
+  if ((second % 2) === 0) {
+    ans2 = 'yes';
   } else {
-    return temp;
+    ans2 = 'no';
   }
-  console.log(gameQuestion(secondNumber));
-  clientAnswer = answer();
-  if ((secondNumber % 2) === 0) {
-    ans = 'yes';
+  if ((third % 2) === 0) {
+    ans3 = 'yes';
   } else {
-    ans = 'no';
+    ans3 = 'no';
   }
-  temp = startRound(clientAnswer, name, ans);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
-  console.log(gameQuestion(thirdNumber));
-  clientAnswer = answer();
-  if ((thirdNumber % 2) === 0) {
-    ans = 'yes';
-  } else {
-    ans = 'no';
-  }
-  temp = startRound(clientAnswer, name, ans);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
-  return victory(name);
+  return startGame(first, second, third, ans1, ans2, ans3, gameRule);
 };
 console.log(runBrainEven());
 

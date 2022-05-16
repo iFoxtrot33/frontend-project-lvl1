@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import {
-  runGreetings, gameQuestion, answer, victory, makeRandomNoZero,
+  makeRandomNoZero,
 } from '../helpers.js';
 
-import startRound from '../src/game-engine.js';
+import startGame from '../src/game-engine.js';
 
 const isPrime = (num) => {
   const arr = [];
@@ -19,42 +19,17 @@ const isPrime = (num) => {
 };
 
 const runGamePrime = () => {
-  const name = (runGreetings());
-  console.log('"yes" if given number is prime. Otherwise answer "no"');
+  const gameRule = '"yes" if given number is prime. Otherwise answer "no"';
   let number = makeRandomNoZero(1000);
-  let clientAnswer;
-  let ans;
-  let temp;
-  console.log(gameQuestion(`${number}`));
-  ans = isPrime(number);
-  clientAnswer = answer();
-  temp = startRound(clientAnswer, name, ans);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
-  number = makeRandomNoZero(100);
-  console.log(gameQuestion(`${number}`));
-  ans = isPrime(number);
-  clientAnswer = answer();
-  temp = startRound(clientAnswer, name, ans);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
+  const first = number;
+  const ans1 = isPrime(number);
   number = makeRandomNoZero(1000);
-  console.log(gameQuestion(`${number}`));
-  ans = isPrime(number);
-  clientAnswer = answer();
-  temp = startRound(clientAnswer, name, ans);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
-  return victory(name);
+  const second = number;
+  const ans2 = isPrime(number);
+  number = makeRandomNoZero(1000);
+  const third = number;
+  const ans3 = isPrime(number);
+  return startGame(first, second, third, ans1, ans2, ans3, gameRule);
 };
 console.log(runGamePrime());
 

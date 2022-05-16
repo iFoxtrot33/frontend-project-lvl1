@@ -1,101 +1,58 @@
 #!/usr/bin/env node
 import {
-  runGreetings, gameQuestion, answer, makeRandom, victory,
+  makeRandom,
 } from '../helpers.js';
 
-import startRound from '../src/game-engine.js';
+import startGame from '../src/game-engine.js';
 
 const runCalcGame = () => {
-  const firstNumber = makeRandom(101);
-  const secondNumber = makeRandom(101);
+  const firstNumber = makeRandom(100);
+  const secondNumber = makeRandom(100);
+  const thirdNumber = makeRandom(100);
+  const fourthNumber = makeRandom(100);
+  const fifthNumber = makeRandom(100);
+  const sixthNumber = makeRandom(100);
   let sign = makeRandom(3);
-  let clientAnswer = 0;
-  let temp;
-  const name = (runGreetings());
-  console.log('What is the result of the expression?');
+  let first;
+  let second;
+  let third;
+  let ans1;
+  let ans2;
+  let ans3;
+  const gameRule = 'What is the result of the expression?';
   if (sign === 0) {
-    console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
-    clientAnswer = answer();
+    first = `${firstNumber} + ${secondNumber}`;
+    ans1 = (firstNumber + secondNumber).toString();
   } else if (sign === 1) {
-    console.log(gameQuestion(`${firstNumber} - ${secondNumber}`));
-    clientAnswer = answer();
+    first = `${firstNumber} - ${secondNumber}`;
+    ans1 = (firstNumber - secondNumber).toString();
   } else if (sign === 2) {
-    console.log(gameQuestion(`${firstNumber} * ${secondNumber}`));
-    clientAnswer = answer();
+    first = `${firstNumber} * ${secondNumber}`;
+    ans1 = (firstNumber * secondNumber).toString();
   }
-  clientAnswer *= 1;
+  sign = makeRandom(3);
   if (sign === 0) {
-    temp = startRound(clientAnswer, name, firstNumber + secondNumber);
+    second = `${thirdNumber} + ${fourthNumber}`;
+    ans2 = (thirdNumber + fourthNumber).toString();
+  } else if (sign === 1) {
+    second = `${thirdNumber} - ${fourthNumber}`;
+    ans2 = (thirdNumber - fourthNumber).toString();
+  } else if (sign === 2) {
+    second = `${thirdNumber} * ${fourthNumber}`;
+    ans2 = (thirdNumber * fourthNumber).toString();
   }
-  if (sign === 1) {
-    temp = startRound(clientAnswer, name, firstNumber - secondNumber);
+  sign = makeRandom(3);
+  if (sign === 0) {
+    third = `${fifthNumber} + ${sixthNumber}`;
+    ans3 = (fifthNumber + sixthNumber).toString();
+  } else if (sign === 1) {
+    third = `${fifthNumber} - ${sixthNumber}`;
+    ans3 = (fifthNumber - sixthNumber).toString();
+  } else if (sign === 2) {
+    third = `${fifthNumber} * ${sixthNumber}`;
+    ans3 = (fifthNumber * sixthNumber).toString();
   }
-  if (sign === 2) {
-    temp = startRound(clientAnswer, name, firstNumber * secondNumber);
-  }
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
-  if (temp.length === 8) {
-    sign = makeRandom(3);
-    if (sign === 0) {
-      console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
-      clientAnswer = answer();
-    } else if (sign === 1) {
-      console.log(gameQuestion(`${firstNumber} - ${secondNumber}`));
-      clientAnswer = answer();
-    } else if (sign === 2) {
-      console.log(gameQuestion(`${firstNumber} * ${secondNumber}`));
-      clientAnswer = answer();
-    }
-    clientAnswer *= 1;
-    if (sign === 0) {
-      temp = startRound(clientAnswer, name, firstNumber + secondNumber);
-    }
-    if (sign === 1) {
-      temp = startRound(clientAnswer, name, firstNumber - secondNumber);
-    }
-    if (sign === 2) {
-      temp = startRound(clientAnswer, name, firstNumber * secondNumber);
-    }
-    if (temp.length === 8) {
-      console.log(temp);
-    } else {
-      return temp;
-    }
-  }
-
-  if (temp.length === 8) {
-    sign = makeRandom(3);
-    if (sign === 0) {
-      console.log(gameQuestion(`${firstNumber} + ${secondNumber}`));
-      clientAnswer = answer();
-    } else if (sign === 1) {
-      console.log(gameQuestion(`${firstNumber} - ${secondNumber}`));
-      clientAnswer = answer();
-    } else if (sign === 2) {
-      console.log(gameQuestion(`${firstNumber} * ${secondNumber}`));
-      clientAnswer = answer();
-    }
-    clientAnswer *= 1;
-    if (sign === 0) {
-      temp = startRound(clientAnswer, name, firstNumber + secondNumber);
-    }
-    if (sign === 1) {
-      temp = startRound(clientAnswer, name, firstNumber - secondNumber);
-    }
-    if (sign === 2) {
-      temp = startRound(clientAnswer, name, firstNumber * secondNumber);
-    }
-    if (temp.length === 8) {
-      console.log(temp);
-    } else {
-      return temp;
-    }
-  }
-  return victory(name);
+  return startGame(first, second, third, ans1, ans2, ans3, gameRule);
 };
 console.log(runCalcGame());
 

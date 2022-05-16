@@ -1,81 +1,51 @@
 #!/usr/bin/env node
 import {
-  runGreetings, gameQuestion, answer, victory, hiddenElement, makeRandom, makeRandomNoZero,
+  hiddenElement, makeRandom, makeRandomNoZero,
 } from '../helpers.js';
 
-import startRound from '../src/game-engine.js';
+import startGame from '../src/game-engine.js';
 
 const runGameProgression = () => {
-  const name = (runGreetings());
-  console.log('What number is missing in the progression?');
+  const gameRule = 'What number is missing in the progression?';
   let firstNumber = makeRandom(101);
   let step = makeRandomNoZero(10);
   const arrSteps = [6, 7, 8, 9, 10];
   let randomLength = arrSteps[Math.floor(Math.random() * (arrSteps.length))];
   let progression = [];
   let hiddenAnswer;
-  let clientAnswer;
-  let ans;
-  let temp;
   for (let i = 0; i < randomLength; i += 1) {
     progression.push(firstNumber);
     firstNumber += step;
   }
   hiddenAnswer = hiddenElement(randomLength) - 1;
-  ans = progression[hiddenAnswer];
+  const ans1 = (progression[hiddenAnswer]).toString();
   progression[hiddenAnswer] = '..';
-  console.log(gameQuestion(`${progression.join(' ')}`));
-  clientAnswer = answer() * 1;
-  ans *= 1;
-  temp = startRound(clientAnswer, name, ans);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
+  const first = `${progression.join(' ')}`;
   randomLength = arrSteps[Math.floor(Math.random() * (arrSteps.length))];
   step = makeRandomNoZero(10);
   firstNumber = makeRandom(101);
   progression = [];
-  ans = 0;
   for (let i = 0; i < randomLength; i += 1) {
     progression.push(firstNumber);
     firstNumber += step;
   }
   hiddenAnswer = hiddenElement(randomLength) - 1;
-  ans = progression[hiddenAnswer];
+  const ans2 = (progression[hiddenAnswer]).toString();
   progression[hiddenAnswer] = '..';
-  console.log(gameQuestion(`${progression.join(' ')}`));
-  clientAnswer = answer() * 1;
-  ans *= 1;
-  temp = startRound(clientAnswer, name, ans);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
+  const second = `${progression.join(' ')}`;
   randomLength = arrSteps[Math.floor(Math.random() * (arrSteps.length))];
   step = makeRandomNoZero(10);
   firstNumber = makeRandom(101);
   progression = [];
-  ans = 0;
   for (let i = 0; i < randomLength; i += 1) {
     progression.push(firstNumber);
     firstNumber += step;
   }
   hiddenAnswer = hiddenElement(randomLength) - 1;
-  ans = progression[hiddenAnswer];
+  const ans3 = (progression[hiddenAnswer]).toString();
   progression[hiddenAnswer] = '..';
-  console.log(gameQuestion(`${progression.join(' ')}`));
-  clientAnswer = answer() * 1;
-  ans *= 1;
-  temp = startRound(clientAnswer, name, ans);
-  if (temp.length === 8) {
-    console.log(temp);
-  } else {
-    return temp;
-  }
-  return victory(name);
+  const third = `${progression.join(' ')}`;
+  return startGame(first, second, third, ans1, ans2, ans3, gameRule);
 };
 console.log(runGameProgression());
 
