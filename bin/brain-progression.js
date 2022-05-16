@@ -1,17 +1,9 @@
 #!/usr/bin/env node
 import {
-  hiddenElement, makeRandom, makeRandomNoZero,
+  hiddenElement, makeRandom, makeRandomNoZero, makeProgression,
 } from '../helpers.js';
 
 import startGame from '../src/game-engine.js';
-
-const makeProgression = (step, randomLength, emptyArr, firstNumber) => {
-  let one = firstNumber;
-  for (let i = 0; i < randomLength; i += 1) {
-    emptyArr.push(one);
-    one += step;
-  }
-};
 
 const runGameProgression = () => {
   const gameRule = 'What number is missing in the progression?';
@@ -19,8 +11,7 @@ const runGameProgression = () => {
   let step = makeRandomNoZero(10);
   const arrSteps = [6, 7, 8, 9, 10];
   let randomLength = arrSteps[Math.floor(Math.random() * (arrSteps.length))];
-  const emptyArr = [];
-  let progression = makeProgression((step, randomLength, emptyArr, firstNumber));
+  let progression = makeProgression(step, randomLength, firstNumber);
   let hiddenAnswer = hiddenElement(randomLength) - 1;
   const ans1 = (progression[hiddenAnswer]).toString();
   progression[hiddenAnswer] = '..';
@@ -28,7 +19,7 @@ const runGameProgression = () => {
   randomLength = arrSteps[Math.floor(Math.random() * (arrSteps.length))];
   step = makeRandomNoZero(10);
   firstNumber = makeRandom(101);
-  progression = makeProgression((step, randomLength, emptyArr, firstNumber));
+  progression = makeProgression(step, randomLength, firstNumber);
   hiddenAnswer = hiddenElement(randomLength) - 1;
   const ans2 = (progression[hiddenAnswer]).toString();
   progression[hiddenAnswer] = '..';
@@ -36,7 +27,7 @@ const runGameProgression = () => {
   randomLength = arrSteps[Math.floor(Math.random() * (arrSteps.length))];
   step = makeRandomNoZero(10);
   firstNumber = makeRandom(101);
-  progression = makeProgression((step, randomLength, emptyArr, firstNumber));
+  progression = makeProgression(step, randomLength, firstNumber);
   hiddenAnswer = hiddenElement(randomLength) - 1;
   const ans3 = (progression[hiddenAnswer]).toString();
   progression[hiddenAnswer] = '..';

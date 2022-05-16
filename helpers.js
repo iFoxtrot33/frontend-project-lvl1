@@ -51,3 +51,13 @@ export const hiddenElement = (num) => {
 export const makeRandom = (num) => Math.floor(Math.random() * num);
 
 export const makeRandomNoZero = (num) => Math.floor(((Math.random()) * num) + 1);
+
+export const makeProgression = (value, length, first) => {
+  const result = [];
+  let one = first;
+  for (let i = 0; i < length; i += 1) {
+    result.push(one);
+    one += value;
+  }
+  return result;
+};
