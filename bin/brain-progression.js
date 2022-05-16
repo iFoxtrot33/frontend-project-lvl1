@@ -20,10 +20,8 @@ const runGameProgression = () => {
   const arrSteps = [6, 7, 8, 9, 10];
   let randomLength = arrSteps[Math.floor(Math.random() * (arrSteps.length))];
   const emptyArr = [];
-  let progression;
-  let hiddenAnswer;
-  progression = makeProgression((step, randomLength, emptyArr, firstNumber));
-  hiddenAnswer = hiddenElement(randomLength) - 1;
+  let progression = makeProgression((step, randomLength, emptyArr, firstNumber));
+  let hiddenAnswer = hiddenElement(randomLength) - 1;
   const ans1 = (progression[hiddenAnswer]).toString();
   progression[hiddenAnswer] = '..';
   const first = `${progression.join(' ')}`;
