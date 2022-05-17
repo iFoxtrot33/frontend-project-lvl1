@@ -9,7 +9,9 @@
 
 Description: There are 5 mini-games in this console app. Type: 'brain-games' to say hello :)
 
-### Video demonstration<a href="https://asciinema.org/a/l40Lrk3midkLmNEOmgZErGnY7"></a>
+### Video demonstration
+<video width="320" height="240" controls>
+<source src="https://asciinema.org/a/l40Lrk3midkLmNEOmgZErGnY7" type="video/mp4">
 __________
 Game: brain-even
 
