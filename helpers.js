@@ -7,15 +7,20 @@ export const runGreetings = () => {
   return userName;
 };
 
-export const askGameQuestion = (question) => `Question: ${question}`;
+export const askGameQuestion = (question) => {
+  console.log(`Question: ${question}`);
+};
 
 export const askAnswer = () => readlineSync.question('Your answer: ');
 
-export const runWrongAnswer = (clientAnswer, userName, correctAnswer) => `
-${clientAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.
-Let's try again, ${userName}!`;
+export const runWrongAnswer = (clientAnswer, userName, correctAnswer) => {
+  console.log(`${clientAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.
+Let's try again, ${userName}!`);
+};
 
-export const runVictory = (userName) => `Congratulations, ${userName}!`;
+export const runVictory = (userName) => {
+  console.log(`Congratulations, ${userName}!`);
+};
 
 export const findMax = (arr) => {
   let m = arr[0];
