@@ -1,5 +1,5 @@
 import {
-  makeRandomNoZero, findMax, calcDividers,
+  makeRandomNoZero, findMax, calcDividers, runVictory, runGreetings,
 } from '../../helpers.js';
 
 import startGame from '../game-engine.js';
@@ -15,31 +15,34 @@ const findCommonDividers = (arr1, arr2, bothArr) => {
 
 const runGameGcd = () => {
   const gameRule = 'Find the greatest common divisor of given numbers.';
-  let firstNumber = makeRandomNoZero(100);
-  let secondNumber = makeRandomNoZero(100);
-  let bothArr = [];
-  let firstArr = calcDividers(firstNumber);
-  let secondArr = calcDividers(secondNumber);
-  let dividers = findCommonDividers(firstArr, secondArr, bothArr);
-  const ans1 = (findMax(dividers)).toString();
-  const first = `${firstNumber} ${secondNumber}`;
-  firstNumber = makeRandomNoZero(100);
-  secondNumber = makeRandomNoZero(100);
-  firstArr = calcDividers(firstNumber);
-  secondArr = calcDividers(secondNumber);
-  bothArr = [];
-  dividers = findCommonDividers(firstArr, secondArr, bothArr);
-  const ans2 = (findMax(dividers)).toString();
-  const second = `${firstNumber} ${secondNumber}`;
-  firstNumber = makeRandomNoZero(100);
-  secondNumber = makeRandomNoZero(100);
-  firstArr = calcDividers(firstNumber);
-  secondArr = calcDividers(secondNumber);
-  bothArr = [];
-  dividers = findCommonDividers(firstArr, secondArr, bothArr);
-  const ans3 = (findMax(dividers)).toString();
-  const third = `${firstNumber} ${secondNumber}`;
-  return startGame(first, second, third, ans1, ans2, ans3, gameRule);
+  let firstNumber;
+  let secondNumber;
+  let bothArr;
+  let dividers;
+  let firstArr;
+  let secondArr;
+  let first;
+  let ans;
+  let result;
+  const userName = (runGreetings());
+  console.log(gameRule);
+  for (let i = 0; i < 3; i += 1) {
+    firstNumber = makeRandomNoZero(100);
+    secondNumber = makeRandomNoZero(100);
+    firstArr = calcDividers(firstNumber);
+    secondArr = calcDividers(secondNumber);
+    bothArr = [];
+    dividers = findCommonDividers(firstArr, secondArr, bothArr);
+    ans = (findMax(dividers)).toString();
+    first = `${firstNumber} ${secondNumber}`;
+    result = startGame(first, ans, userName);
+    if (result === 0) {
+      break;
+    }
+    if (i === 2) {
+      runVictory(userName);
+    }
+  }
 };
 
 export default runGameGcd;

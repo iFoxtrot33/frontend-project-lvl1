@@ -1,37 +1,39 @@
 import {
-  hiddenElement, makeRandom, makeRandomNoZero, makeProgression,
+  hiddenElement, makeRandom, makeRandomNoZero, makeProgression, runVictory, runGreetings,
 } from '../../helpers.js';
 
 import startGame from '../game-engine.js';
 
 const runGameProgression = () => {
   const gameRule = 'What number is missing in the progression?';
-  let firstNumber = makeRandom(101);
-  let step = makeRandomNoZero(10);
+  let firstNumber;
+  let step;
+  let randomLength;
+  let progression;
+  let hiddenAnswer;
+  let ans;
+  let first;
+  let result;
   const arrSteps = [6, 7, 8, 9, 10];
-  let randomLength = arrSteps[makeRandom(arrSteps.length)];
-  let progression = makeProgression(step, randomLength, firstNumber);
-  let hiddenAnswer = hiddenElement(randomLength) - 1;
-  const ans1 = (progression[hiddenAnswer]).toString();
-  progression[hiddenAnswer] = '..';
-  const first = `${progression.join(' ')}`;
-  randomLength = arrSteps[makeRandom(arrSteps.length)];
-  step = makeRandomNoZero(10);
-  firstNumber = makeRandom(101);
-  progression = makeProgression(step, randomLength, firstNumber);
-  hiddenAnswer = hiddenElement(randomLength) - 1;
-  const ans2 = (progression[hiddenAnswer]).toString();
-  progression[hiddenAnswer] = '..';
-  const second = `${progression.join(' ')}`;
-  randomLength = arrSteps[makeRandom(arrSteps.length)];
-  step = makeRandomNoZero(10);
-  firstNumber = makeRandom(101);
-  progression = makeProgression(step, randomLength, firstNumber);
-  hiddenAnswer = hiddenElement(randomLength) - 1;
-  const ans3 = (progression[hiddenAnswer]).toString();
-  progression[hiddenAnswer] = '..';
-  const third = `${progression.join(' ')}`;
-  return startGame(first, second, third, ans1, ans2, ans3, gameRule);
+  const userName = (runGreetings());
+  console.log(gameRule);
+  for (let i = 0; i < 3; i += 1) {
+    firstNumber = makeRandom(101);
+    step = makeRandomNoZero(10);
+    randomLength = arrSteps[makeRandom(arrSteps.length)];
+    progression = makeProgression(step, randomLength, firstNumber);
+    hiddenAnswer = hiddenElement(randomLength) - 1;
+    ans = (progression[hiddenAnswer]).toString();
+    progression[hiddenAnswer] = '..';
+    first = `${progression.join(' ')}`;
+    result = startGame(first, ans, userName);
+    if (result === 0) {
+      break;
+    }
+    if (i === 2) {
+      runVictory(userName);
+    }
+  }
 };
 
 export default runGameProgression;

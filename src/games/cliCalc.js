@@ -1,5 +1,5 @@
 import {
-  makeRandom,
+  makeRandom, runVictory, runGreetings,
 } from '../../helpers.js';
 
 import startGame from '../game-engine.js';
@@ -22,23 +22,29 @@ const choseSign1 = (sign, one, two) => {
 };
 
 const runCalcGame = () => {
-  const firstNumber = makeRandom(100);
-  const secondNumber = makeRandom(100);
-  const thirdNumber = makeRandom(100);
-  const fourthNumber = makeRandom(100);
-  const fifthNumber = makeRandom(100);
-  const sixthNumber = makeRandom(100);
-  let sign = makeRandom(3);
+  let result;
+  let ans;
+  let first;
+  let sign;
+  let firstNumber;
+  let secondNumber;
   const gameRule = 'What is the result of the expression?';
-  const first = choseSign(sign, firstNumber, secondNumber);
-  const ans1 = (choseSign1(sign, firstNumber, secondNumber)).toString();
-  sign = makeRandom(3);
-  const second = choseSign(sign, thirdNumber, fourthNumber);
-  const ans2 = (choseSign1(sign, thirdNumber, fourthNumber)).toString();
-  sign = makeRandom(3);
-  const third = choseSign(sign, fifthNumber, sixthNumber);
-  const ans3 = (choseSign1(sign, fifthNumber, sixthNumber)).toString();
-  return startGame(first, second, third, ans1, ans2, ans3, gameRule);
+  const userName = (runGreetings());
+  console.log(gameRule);
+  for (let i = 0; i < 3; i += 1) {
+    firstNumber = makeRandom(100);
+    secondNumber = makeRandom(100);
+    sign = makeRandom(3);
+    first = choseSign(sign, firstNumber, secondNumber);
+    ans = (choseSign1(sign, firstNumber, secondNumber)).toString();
+    result = startGame(first, ans, userName);
+    if (result === 0) {
+      break;
+    }
+    if (i === 2) {
+      runVictory(userName);
+    }
+  }
 };
 
 export default runCalcGame;
