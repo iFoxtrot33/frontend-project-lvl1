@@ -14,28 +14,18 @@ const findCommonDividers = (arr1, arr2, bothArr) => {
 };
 
 const runGameGcd = () => {
-  const gameRule = 'Find the greatest common divisor of given numbers.';
-  let firstNumber;
-  let secondNumber;
-  let bothArr;
-  let dividers;
-  let firstArr;
-  let secondArr;
-  let first;
-  let ans;
-  let result;
   const userName = (runGreetings());
-  console.log(gameRule);
+  console.log('Find the greatest common divisor of given numbers.');
   for (let i = 0; i < 3; i += 1) {
-    firstNumber = makeRandomNoZero(100);
-    secondNumber = makeRandomNoZero(100);
-    firstArr = calcDividers(firstNumber);
-    secondArr = calcDividers(secondNumber);
-    bothArr = [];
-    dividers = findCommonDividers(firstArr, secondArr, bothArr);
-    ans = (findMax(dividers)).toString();
-    first = `${firstNumber} ${secondNumber}`;
-    result = startGame(first, ans, userName);
+    const firstNumber = makeRandomNoZero(100);
+    const secondNumber = makeRandomNoZero(100);
+    const firstArr = calcDividers(firstNumber);
+    const secondArr = calcDividers(secondNumber);
+    const bothArr = [];
+    const dividers = findCommonDividers(firstArr, secondArr, bothArr);
+    const ans = (findMax(dividers)).toString();
+    const first = `${firstNumber} ${secondNumber}`;
+    const result = startGame(first, ans, userName);
     if (result === 0) {
       break;
     }

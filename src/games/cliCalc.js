@@ -22,22 +22,15 @@ const choseSign1 = (sign, one, two) => {
 };
 
 const runCalcGame = () => {
-  let result;
-  let ans;
-  let first;
-  let sign;
-  let firstNumber;
-  let secondNumber;
-  const gameRule = 'What is the result of the expression?';
   const userName = (runGreetings());
-  console.log(gameRule);
+  console.log('What is the result of the expression?');
   for (let i = 0; i < 3; i += 1) {
-    firstNumber = makeRandom(100);
-    secondNumber = makeRandom(100);
-    sign = makeRandom(3);
-    first = choseSign(sign, firstNumber, secondNumber);
-    ans = (choseSign1(sign, firstNumber, secondNumber)).toString();
-    result = startGame(first, ans, userName);
+    const firstNumber = makeRandom(100);
+    const secondNumber = makeRandom(100);
+    const sign = makeRandom(3);
+    const first = choseSign(sign, firstNumber, secondNumber);
+    const ans = (choseSign1(sign, firstNumber, secondNumber)).toString();
+    const result = startGame(first, ans, userName);
     if (result === 0) {
       break;
     }

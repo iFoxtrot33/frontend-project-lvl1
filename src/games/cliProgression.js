@@ -5,28 +5,19 @@ import {
 import startGame from '../game-engine.js';
 
 const runGameProgression = () => {
-  const gameRule = 'What number is missing in the progression?';
-  let firstNumber;
-  let step;
-  let randomLength;
-  let progression;
-  let hiddenAnswer;
-  let ans;
-  let first;
-  let result;
   const arrSteps = [6, 7, 8, 9, 10];
   const userName = (runGreetings());
-  console.log(gameRule);
+  console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 1) {
-    firstNumber = makeRandom(101);
-    step = makeRandomNoZero(10);
-    randomLength = arrSteps[makeRandom(arrSteps.length)];
-    progression = makeProgression(step, randomLength, firstNumber);
-    hiddenAnswer = hiddenElement(randomLength) - 1;
-    ans = (progression[hiddenAnswer]).toString();
+    const firstNumber = makeRandom(101);
+    const step = makeRandomNoZero(10);
+    const randomLength = arrSteps[makeRandom(arrSteps.length)];
+    const progression = makeProgression(step, randomLength, firstNumber);
+    const hiddenAnswer = hiddenElement(randomLength) - 1;
+    const ans = (progression[hiddenAnswer]).toString();
     progression[hiddenAnswer] = '..';
-    first = `${progression.join(' ')}`;
-    result = startGame(first, ans, userName);
+    const first = `${progression.join(' ')}`;
+    const result = startGame(first, ans, userName);
     if (result === 0) {
       break;
     }

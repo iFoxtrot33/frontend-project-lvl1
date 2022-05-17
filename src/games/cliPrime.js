@@ -13,18 +13,13 @@ const isPrime = (num) => {
 };
 
 const runGamePrime = () => {
-  const gameRule = '"yes" if given number is prime. Otherwise answer "no"';
-  let number;
-  let first;
-  let ans;
-  let result;
   const userName = (runGreetings());
-  console.log(gameRule);
+  console.log('"yes" if given number is prime. Otherwise answer "no"');
   for (let i = 0; i < 3; i += 1) {
-    number = makeRandomNoZero(1000);
-    first = number;
-    ans = isPrime(number);
-    result = startGame(first, ans, userName);
+    const number = makeRandomNoZero(1000);
+    const first = number;
+    const ans = isPrime(number);
+    const result = startGame(first, ans, userName);
     if (result === 0) {
       break;
     }
