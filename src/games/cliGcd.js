@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import {
   makeRandomNoZero, findMax, calcDividers,
 } from '../../helpers.js';
@@ -42,6 +41,5 @@ const runGameGcd = () => {
   const third = `${firstNumber} ${secondNumber}`;
   return startGame(first, second, third, ans1, ans2, ans3, gameRule);
 };
-console.log(runGameGcd());
 
 export default runGameGcd;

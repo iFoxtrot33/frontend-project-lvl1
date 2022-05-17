@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import {
   makeRandom,
 } from '../../helpers.js';
@@ -41,6 +40,5 @@ const runCalcGame = () => {
   const ans3 = (choseSign1(sign, fifthNumber, sixthNumber)).toString();
   return startGame(first, second, third, ans1, ans2, ans3, gameRule);
 };
-console.log(runCalcGame());
 
 export default runCalcGame;

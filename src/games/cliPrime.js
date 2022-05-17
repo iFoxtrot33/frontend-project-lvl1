@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import {
   makeRandomNoZero, calcDividers,
 } from '../../helpers.js';
@@ -26,6 +25,5 @@ const runGamePrime = () => {
   const ans3 = isPrime(number);
   return startGame(first, second, third, ans1, ans2, ans3, gameRule);
 };
-console.log(runGamePrime());
 
 export default runGamePrime;

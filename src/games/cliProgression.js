@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import {
   hiddenElement, makeRandom, makeRandomNoZero, makeProgression,
 } from '../../helpers.js';
@@ -34,6 +33,5 @@ const runGameProgression = () => {
   const third = `${progression.join(' ')}`;
   return startGame(first, second, third, ans1, ans2, ans3, gameRule);
 };
-console.log(runGameProgression());
 
 export default runGameProgression;

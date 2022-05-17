@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import {
   makeRandom,
 } from '../../helpers.js';
@@ -29,6 +28,5 @@ const runBrainEven = () => {
   }
   return startGame(first, second, third, ans1, ans2, ans3, gameRule);
 };
-console.log(runBrainEven());
 
 export default runBrainEven;
