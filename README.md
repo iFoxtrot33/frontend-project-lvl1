@@ -8,7 +8,7 @@
 ![example workflow](https://github.com/iFoxtrot33/frontend-project-lvl1/actions/workflows/lintCheck.yml/badge.svg)
 
 Description: There are 5 mini-games in this console app. Type: 'brain-games' to say hello :)
-<a href="https://asciinema.org/a/l40Lrk3midkLmNEOmgZErGnY7" /></a>
+<a href="https://asciinema.org/a/l40Lrk3midkLmNEOmgZErGnY7"></a>
 __________
 Game: brain-even
 
