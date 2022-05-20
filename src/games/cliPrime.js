@@ -6,10 +6,7 @@ import startGame from '../game-engine.js';
 
 const isPrime = (num) => {
   const arr = calcDividers(num);
-  if (arr.length === 2) {
-    return true;
-  }
-  return false;
+  return (arr.length === 2);
 };
 
 const runGamePrime = () => {
