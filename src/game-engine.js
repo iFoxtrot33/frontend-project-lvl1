@@ -1,6 +1,6 @@
 import {
   runWrongAnswer, askGameQuestion, askAnswer, runGreetings, runVictory,
-} from '../helpers.js';
+} from './helpers.js';
 
 const startGame = (askOne, askTwo, askThree, ansOne, ansTwo, ansThree, gamerule) => {
   const arrAsk = [askOne, askTwo, askThree];

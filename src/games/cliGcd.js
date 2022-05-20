@@ -1,6 +1,6 @@
 import {
   getRandomNumber, findMax, calcDividers,
-} from '../../helpers.js';
+} from '../helpers.js';
 
 import startGame from '../game-engine.js';
 

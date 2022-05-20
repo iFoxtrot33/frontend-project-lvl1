@@ -1,6 +1,6 @@
 import {
   hiddenElement, getRandomNumber, makeProgression,
-} from '../../helpers.js';
+} from '../helpers.js';
 
 import startGame from '../game-engine.js';
 
