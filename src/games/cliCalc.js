@@ -8,7 +8,7 @@ const choseSign = (sign, one, two) => {
   const signValue = ['+', '-', '*'];
   return `${one} ${signValue[sign]} ${two}`;
 };
-const choseSign1 = (sign, one, two) => {
+const answer = (sign, one, two) => {
   if (sign === 0) {
     return one + two;
   } if (sign === 1) {
@@ -26,7 +26,7 @@ const runCalcGame = () => {
     const secondNumber = getRandomNumber(0, 100);
     const sign = getRandomNumber(0, 2);
     number.push(choseSign(sign, firstNumber, secondNumber));
-    expectedAnswer.push((choseSign1(sign, firstNumber, secondNumber)).toString());
+    expectedAnswer.push((answer(sign, firstNumber, secondNumber)).toString());
   }
   startGame(
     number[0],
