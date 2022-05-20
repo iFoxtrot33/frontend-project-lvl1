@@ -4,17 +4,14 @@ import {
 import startGame from '../game-engine.js';
 
 const runBrainEven = () => {
-  let ans;
+  let expectedAnswer;
   const userName = (runGreetings());
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
     const first = makeRandom(100);
-    if ((first % 2) === 0) {
-      ans = 'yes';
-    } else {
-      ans = 'no';
-    }
-    const result = startGame(first, ans, userName);
+    const isEven = (number) => number % 2 === 0;
+    expectedAnswer = isEven(first) ? 'yes' : 'no';
+    const result = startGame(first, expectedAnswer, userName);
     if (result === 0) {
       break;
     }
