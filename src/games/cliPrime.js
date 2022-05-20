@@ -1,5 +1,5 @@
 import {
-  getRandomNumber, calcDividers, runGreetings, runVictory,
+  getRandomNumber, calcDividers,
 } from '../../helpers.js';
 
 import startGame from '../game-engine.js';
@@ -10,21 +10,24 @@ const isPrime = (num) => {
 };
 
 const runGamePrime = () => {
-  const userName = (runGreetings());
-  let expectedAnswer;
-  console.log('"yes" if given number is prime. Otherwise answer "no"');
+  const number = [];
+  const expectedAnswer = [];
+  let first;
+  const gamerule = '"yes" if given number is prime. Otherwise answer "no"';
   for (let i = 0; i < 3; i += 1) {
-    const number = getRandomNumber(1, 1000);
-    const first = number;
-    expectedAnswer = isPrime(number) ? 'yes' : 'no';
-    const result = startGame(first, expectedAnswer, userName);
-    if (result === 0) {
-      break;
-    }
-    if (i === 2) {
-      runVictory(userName);
-    }
+    first = getRandomNumber(1, 1000);
+    number.push(first);
+    expectedAnswer.push(isPrime(first) ? 'yes' : 'no');
   }
+  startGame(
+    number[0],
+    number[1],
+    number[2],
+    expectedAnswer[0],
+    expectedAnswer[1],
+    expectedAnswer[2],
+    gamerule,
+  );
 };
 
 export default runGamePrime;

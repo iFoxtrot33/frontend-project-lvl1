@@ -1,24 +1,27 @@
 import {
-  getRandomNumber, runGreetings, runVictory,
+  getRandomNumber,
 } from '../../helpers.js';
 import startGame from '../game-engine.js';
 
 const runBrainEven = () => {
-  let expectedAnswer;
-  const userName = (runGreetings());
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  const number = [];
+  const expectedAnswer = [];
+  const gamerule = 'Answer "yes" if the number is even, otherwise answer "no".';
   for (let i = 0; i < 3; i += 1) {
     const first = getRandomNumber(1, 100);
-    const isEven = (number) => number % 2 === 0;
-    expectedAnswer = isEven(first) ? 'yes' : 'no';
-    const result = startGame(first, expectedAnswer, userName);
-    if (result === 0) {
-      break;
-    }
-    if (i === 2) {
-      runVictory(userName);
-    }
+    const isEven = (num) => num % 2 === 0;
+    number.push(first);
+    expectedAnswer.push(isEven(first) ? 'yes' : 'no');
   }
+  startGame(
+    number[0],
+    number[1],
+    number[2],
+    expectedAnswer[0],
+    expectedAnswer[1],
+    expectedAnswer[2],
+    gamerule,
+  );
 };
 
 export default runBrainEven;
