@@ -50,10 +50,6 @@ export const hiddenElement = (num) => {
   return hiddenAnswer;
 };
 
-export const makeRandom = (num) => Math.floor(Math.random() * num);
-
-export const makeRandomNoZero = (num) => Math.floor(((Math.random()) * num) + 1);
-
 export const makeProgression = (value, length, first) => {
   const result = [];
   let one = first;
@@ -63,3 +59,5 @@ export const makeProgression = (value, length, first) => {
   }
   return result;
 };
+
+export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;

@@ -1,17 +1,16 @@
 import {
-  hiddenElement, makeRandom, makeRandomNoZero, makeProgression, runVictory, runGreetings,
+  hiddenElement, getRandomNumber, makeProgression, runVictory, runGreetings,
 } from '../../helpers.js';
 
 import startGame from '../game-engine.js';
 
 const runGameProgression = () => {
-  const arrSteps = [6, 7, 8, 9, 10];
   const userName = (runGreetings());
   console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 1) {
-    const firstNumber = makeRandom(101);
-    const step = makeRandomNoZero(10);
-    const randomLength = arrSteps[makeRandom(arrSteps.length)];
+    const firstNumber = getRandomNumber(1, 100);
+    const step = getRandomNumber(1, 10);
+    const randomLength = getRandomNumber(6, 10);
     const progression = makeProgression(step, randomLength, firstNumber);
     const hiddenAnswer = hiddenElement(randomLength) - 1;
     const ans = (progression[hiddenAnswer]).toString();

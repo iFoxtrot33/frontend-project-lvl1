@@ -1,5 +1,5 @@
 import {
-  makeRandom, runVictory, runGreetings,
+  getRandomNumber, runVictory, runGreetings,
 } from '../../helpers.js';
 
 import startGame from '../game-engine.js';
@@ -25,9 +25,9 @@ const runCalcGame = () => {
   const userName = (runGreetings());
   console.log('What is the result of the expression?');
   for (let i = 0; i < 3; i += 1) {
-    const firstNumber = makeRandom(100);
-    const secondNumber = makeRandom(100);
-    const sign = makeRandom(3);
+    const firstNumber = getRandomNumber(0, 100);
+    const secondNumber = getRandomNumber(0, 100);
+    const sign = getRandomNumber(0, 3);
     const first = choseSign(sign, firstNumber, secondNumber);
     const ans = (choseSign1(sign, firstNumber, secondNumber)).toString();
     const result = startGame(first, ans, userName);
