@@ -42,14 +42,6 @@ export const calcDividers = (num) => {
   return arr;
 };
 
-export const hiddenElement = (num) => {
-  let hiddenAnswer = Math.floor((Math.random() + 0.2) * 10);
-  while (num < hiddenAnswer) {
-    hiddenAnswer = Math.floor((Math.random() + 0.2) * 10);
-  }
-  return hiddenAnswer;
-};
-
 export const makeProgression = (value, length, first) => {
   const result = [];
   let one = first;

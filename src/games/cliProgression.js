@@ -1,5 +1,5 @@
 import {
-  hiddenElement, getRandomNumber, makeProgression,
+  getRandomNumber, makeProgression,
 } from '../helpers.js';
 
 import startGame from '../game-engine.js';
@@ -13,7 +13,7 @@ const runGameProgression = () => {
     const step = getRandomNumber(1, 10);
     const randomLength = getRandomNumber(6, 10);
     const progression = makeProgression(step, randomLength, firstNumber);
-    const hiddenAnswer = hiddenElement(randomLength) - 1;
+    const hiddenAnswer = getRandomNumber(2, 9);
     expectedAnswer.push((progression[hiddenAnswer]).toString());
     progression[hiddenAnswer] = '..';
     number.push(`${progression.join(' ')}`);
