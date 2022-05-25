@@ -17,23 +17,14 @@ const calcMaxDivider = (num1, num2) => {
 
 const runGameGcd = () => {
   const gamerule = 'Find the greatest common divisor of given numbers.';
-  const number = [];
-  const expectedAnswer = [];
+  const gameData = [];
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = getRandomNumber(1, 100);
     const secondNumber = getRandomNumber(1, 100);
-    expectedAnswer.push((calcMaxDivider(firstNumber, secondNumber)).toString());
-    number.push(`${firstNumber} ${secondNumber}`);
+    gameData.push(`${firstNumber} ${secondNumber}`);
+    gameData.push((calcMaxDivider(firstNumber, secondNumber)).toString());
   }
-  startGame(
-    number[0],
-    number[1],
-    number[2],
-    expectedAnswer[0],
-    expectedAnswer[1],
-    expectedAnswer[2],
-    gamerule,
-  );
+  startGame(gameData, gamerule);
 };
 
 export default runGameGcd;

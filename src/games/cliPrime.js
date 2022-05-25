@@ -18,24 +18,15 @@ const isPrime = (num) => {
 };
 
 const runGamePrime = () => {
-  const number = [];
-  const expectedAnswer = [];
+  const gameData = [];
   let first;
   const gamerule = '"yes" if given number is prime. Otherwise answer "no"';
   for (let i = 0; i < 3; i += 1) {
     first = getRandomNumber(1, 1000);
-    number.push(first);
-    expectedAnswer.push(isPrime(first) ? 'yes' : 'no');
+    gameData.push(first);
+    gameData.push(isPrime(first) ? 'yes' : 'no');
   }
-  startGame(
-    number[0],
-    number[1],
-    number[2],
-    expectedAnswer[0],
-    expectedAnswer[1],
-    expectedAnswer[2],
-    gamerule,
-  );
+  startGame(gameData, gamerule);
 };
 
 export default runGamePrime;

@@ -22,22 +22,20 @@ export const runVictory = (userName) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-const startGame = (askOne, askTwo, askThree, ansOne, ansTwo, ansThree, gamerule) => {
-  const arrAsk = [askOne, askTwo, askThree];
-  const arrAns = [ansOne, ansTwo, ansThree];
+const startGame = (gameData, gamerule) => {
   let clientAnswer;
   const userName = (runGreetings());
   console.log(gamerule);
-  for (let i = 0; i < arrAsk.length; i += 1) {
-    askGameQuestion(arrAsk[i]);
+  for (let i = 0; i < gameData.length; i += 2) {
+    askGameQuestion(gameData[i]);
     clientAnswer = askAnswer();
-    if ((clientAnswer) === (arrAns[i])) {
+    if ((clientAnswer) === (gameData[i + 1])) {
       console.log('Correct!');
     } else {
-      runWrongAnswer(clientAnswer, userName, arrAns[i]);
+      runWrongAnswer(clientAnswer, userName, gameData[i + 1]);
       break;
     }
-    if (i === 2) {
+    if (i === 4) {
       runVictory(userName);
     }
   }

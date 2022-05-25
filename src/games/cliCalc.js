@@ -24,24 +24,15 @@ const answer = (sign, one, two) => {
 
 const runCalcGame = () => {
   const gamerule = 'What is the result of the expression?';
-  const number = [];
-  const expectedAnswer = [];
+  const gameData = [];
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = getRandomNumber(0, 100);
     const secondNumber = getRandomNumber(0, 100);
     const sign = choseSign();
-    number.push(`${firstNumber} ${sign} ${secondNumber}`);
-    expectedAnswer.push((answer(sign, firstNumber, secondNumber)).toString());
+    gameData.push(`${firstNumber} ${sign} ${secondNumber}`);
+    gameData.push((answer(sign, firstNumber, secondNumber)).toString());
   }
-  startGame(
-    number[0],
-    number[1],
-    number[2],
-    expectedAnswer[0],
-    expectedAnswer[1],
-    expectedAnswer[2],
-    gamerule,
-  );
+  startGame(gameData, gamerule);
 };
 
 export default runCalcGame;
