@@ -1,8 +1,16 @@
-import {
-  getRandomNumber, calcDividers,
-} from '../helpers.js';
+import getRandomNumber from '../helpers.js';
 
 import startGame from '../index.js';
+
+const calcDividers = (num) => {
+  const arr = [];
+  for (let k = 0; k <= num; k += 1) {
+    if ((num % k) === 0) {
+      arr.push(k);
+    }
+  }
+  return arr;
+};
 
 const isPrime = (num) => {
   const arr = calcDividers(num);

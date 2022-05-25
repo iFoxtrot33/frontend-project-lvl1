@@ -1,8 +1,16 @@
-import {
-  getRandomNumber, makeProgression,
-} from '../helpers.js';
+import getRandomNumber from '../helpers.js';
 
 import startGame from '../index.js';
+
+const makeProgression = (value, length, first) => {
+  const result = [];
+  let one = first;
+  for (let i = 0; i < length; i += 1) {
+    result.push(one);
+    one += value;
+  }
+  return result;
+};
 
 const runGameProgression = () => {
   const gamerule = 'What number is missing in the progression?';

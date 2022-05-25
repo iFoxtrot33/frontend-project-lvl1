@@ -1,6 +1,4 @@
-import {
-  getRandomNumber,
-} from '../helpers.js';
+import getRandomNumber from '../helpers.js';
 
 import startGame from '../index.js';
 

@@ -1,8 +1,8 @@
-import {
-  getRandomNumber,
-  isEven,
-} from '../helpers.js';
+import getRandomNumber from '../helpers.js';
+
 import startGame from '../index.js';
+
+const isEven = (num) => num % 2 === 0;
 
 const runBrainEven = () => {
   const number = [];
