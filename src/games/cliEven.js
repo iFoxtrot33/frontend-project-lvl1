@@ -1,5 +1,6 @@
 import {
   getRandomNumber,
+  isEven,
 } from '../helpers.js';
 import startGame from '../game-engine.js';
 
@@ -9,7 +10,6 @@ const runBrainEven = () => {
   const gamerule = 'Answer "yes" if the number is even, otherwise answer "no".';
   for (let i = 0; i < 3; i += 1) {
     const first = getRandomNumber(1, 100);
-    const isEven = (num) => num % 2 === 0;
     number.push(first);
     expectedAnswer.push(isEven(first) ? 'yes' : 'no');
   }

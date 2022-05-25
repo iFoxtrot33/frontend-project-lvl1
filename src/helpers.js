@@ -22,26 +22,6 @@ export const runVictory = (userName) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export const findMax = (arr) => {
-  let m = arr[0];
-  for (let i = 0; i < arr.length; i += 1) {
-    if (m < arr[i]) {
-      m = arr[i];
-    }
-  }
-  return m;
-};
-
-export const calcDividers = (num) => {
-  const arr = [];
-  for (let k = 0; k <= num; k += 1) {
-    if ((num % k) === 0) {
-      arr.push(k);
-    }
-  }
-  return arr;
-};
-
 export const makeProgression = (value, length, first) => {
   const result = [];
   let one = first;
@@ -53,3 +33,5 @@ export const makeProgression = (value, length, first) => {
 };
 
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+export const isEven = (num) => num % 2 === 0;
