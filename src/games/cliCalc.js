@@ -4,17 +4,24 @@ import {
 
 import startGame from '../game-engine.js';
 
-const choseSign = (sign, one, two) => {
-  const signValue = ['+', '-', '*'];
-  return `${one} ${signValue[sign]} ${two}`;
+const choseSign = () => {
+  const operators = ['+', '-', '*'];
+  const i = getRandomNumber(0, 2);
+  return operators[i];
 };
 const answer = (sign, one, two) => {
-  if (sign === 0) {
-    return one + two;
-  } if (sign === 1) {
-    return one - two;
+  let result;
+  switch (sign) {
+    case '+':
+      result = one + two;
+      break;
+    case '-':
+      result = one - two;
+      break;
+    default:
+      result = one * two;
   }
-  return one * two;
+  return result;
 };
 
 const runCalcGame = () => {
@@ -24,8 +31,8 @@ const runCalcGame = () => {
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = getRandomNumber(0, 100);
     const secondNumber = getRandomNumber(0, 100);
-    const sign = getRandomNumber(0, 2);
-    number.push(choseSign(sign, firstNumber, secondNumber));
+    const sign = choseSign();
+    number.push(`${firstNumber} ${sign} ${secondNumber}`);
     expectedAnswer.push((answer(sign, firstNumber, secondNumber)).toString());
   }
   startGame(
