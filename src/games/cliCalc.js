@@ -2,7 +2,7 @@ import {
   getRandomNumber,
 } from '../helpers.js';
 
-import startGame from '../game-engine.js';
+import startGame from '../index.js';
 
 const choseSign = () => {
   const operators = ['+', '-', '*'];

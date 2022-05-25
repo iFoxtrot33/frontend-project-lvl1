@@ -2,7 +2,7 @@ import {
   getRandomNumber,
   isEven,
 } from '../helpers.js';
-import startGame from '../game-engine.js';
+import startGame from '../index.js';
 
 const runBrainEven = () => {
   const number = [];

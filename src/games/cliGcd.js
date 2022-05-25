@@ -2,7 +2,7 @@ import {
   getRandomNumber,
 } from '../helpers.js';
 
-import startGame from '../game-engine.js';
+import startGame from '../index.js';
 
 const calcMaxDivider = (num1, num2) => {
   let a = num1;

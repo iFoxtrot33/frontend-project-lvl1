@@ -2,7 +2,7 @@ import {
   getRandomNumber, makeProgression,
 } from '../helpers.js';
 
-import startGame from '../game-engine.js';
+import startGame from '../index.js';
 
 const runGameProgression = () => {
   const gamerule = 'What number is missing in the progression?';
@@ -13,7 +13,7 @@ const runGameProgression = () => {
     const step = getRandomNumber(1, 10);
     const randomLength = getRandomNumber(6, 10);
     const progression = makeProgression(step, randomLength, firstNumber);
-    const hiddenAnswer = getRandomNumber(2, 9);
+    const hiddenAnswer = randomLength - getRandomNumber(1, 5);
     expectedAnswer.push((progression[hiddenAnswer]).toString());
     progression[hiddenAnswer] = '..';
     number.push(`${progression.join(' ')}`);

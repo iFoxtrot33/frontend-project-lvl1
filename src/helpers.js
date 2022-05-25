@@ -35,3 +35,13 @@ export const makeProgression = (value, length, first) => {
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const isEven = (num) => num % 2 === 0;
+
+export const calcDividers = (num) => {
+  const arr = [];
+  for (let k = 0; k <= num; k += 1) {
+    if ((num % k) === 0) {
+      arr.push(k);
+    }
+  }
+  return arr;
+};

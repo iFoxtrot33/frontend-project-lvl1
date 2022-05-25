@@ -2,7 +2,7 @@ import {
   getRandomNumber, calcDividers,
 } from '../helpers.js';
 
-import startGame from '../game-engine.js';
+import startGame from '../index.js';
 
 const isPrime = (num) => {
   const arr = calcDividers(num);
