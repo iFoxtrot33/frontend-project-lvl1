@@ -2,7 +2,7 @@ import getRandomNumber from '../helpers.js';
 
 import startGame from '../index.js';
 
-const calcMaxDivider = (num1, num2) => {
+const calculateGCD = (num1, num2) => {
   let a = num1;
   let b = num2;
   while ((a !== 0) && (b !== 0)) {
@@ -23,7 +23,7 @@ const runGameGcd = () => {
     const firstNumber = getRandomNumber(1, 100);
     const secondNumber = getRandomNumber(1, 100);
     gameRound.push(`${firstNumber} ${secondNumber}`);
-    gameRound.push((calcMaxDivider(firstNumber, secondNumber)).toString());
+    gameRound.push((calculateGCD(firstNumber, secondNumber)).toString());
     gameData.push(gameRound);
     gameRound = [];
   }
