@@ -2,11 +2,6 @@ import getRandomNumber from '../helpers.js';
 
 import startGame from '../index.js';
 
-const choseSign = () => {
-  const operators = ['+', '-', '*'];
-  const i = getRandomNumber(0, 2);
-  return operators[i];
-};
 const getAnswer = (sign, one, two) => {
   let result;
   switch (sign) {
@@ -28,7 +23,9 @@ const runCalcGame = () => {
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = getRandomNumber(0, 100);
     const secondNumber = getRandomNumber(0, 100);
-    const sign = choseSign();
+    const operators = ['+', '-', '*'];
+    const operator = getRandomNumber(0, 2);
+    const sign = operators[operator];
     gameData.push(`${firstNumber} ${sign} ${secondNumber}`);
     gameData.push((getAnswer(sign, firstNumber, secondNumber)).toString());
   }
