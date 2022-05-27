@@ -11,8 +11,11 @@ const getAnswer = (sign, one, two) => {
     case '-':
       result = one - two;
       break;
-    default:
+    case '*':
       result = one * two;
+      break;
+    default:
+      throw new Error('Wrong sign! Restart the game');
   }
   return result;
 };
