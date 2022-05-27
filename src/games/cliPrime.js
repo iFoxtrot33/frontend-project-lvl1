@@ -4,13 +4,13 @@ import startGame from '../index.js';
 
 const isPrime = (num) => {
   const requiredDividers = 2;
-  const arr = [];
-  for (let k = 0; k <= num; k += 1) {
-    if ((num % k) === 0) {
-      arr.push(k);
+  const numberOfDividers = [];
+  for (let divider = 0; divider <= num; divider += 1) {
+    if ((num % divider) === 0) {
+      numberOfDividers.push(divider);
     }
   }
-  return (arr.length === requiredDividers);
+  return (numberOfDividers.length === requiredDividers);
 };
 
 const runGamePrime = () => {
@@ -18,7 +18,8 @@ const runGamePrime = () => {
   let gameRound = [];
   let number;
   const gamerule = '"yes" if given number is prime. Otherwise answer "no"';
-  for (let i = 0; i < 3; i += 1) {
+  const numberOfRounds = 3;
+  for (let i = 0; i < numberOfRounds; i += 1) {
     number = getRandomNumber(1, 1000);
     gameRound.push(number);
     gameRound.push(isPrime(number) ? 'yes' : 'no');

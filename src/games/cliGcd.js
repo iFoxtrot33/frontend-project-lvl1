@@ -2,9 +2,9 @@ import getRandomNumber from '../helpers.js';
 
 import startGame from '../index.js';
 
-const calculateGCD = (num1, num2) => {
-  let a = num1;
-  let b = num2;
+const calculateGCD = (firstNumber, secondNumber) => {
+  let a = firstNumber;
+  let b = secondNumber;
   while ((a !== 0) && (b !== 0)) {
     if (a > b) {
       a %= b;
@@ -19,7 +19,8 @@ const runGameGcd = () => {
   const gamerule = 'Find the greatest common divisor of given numbers.';
   const gameData = [];
   let gameRound = [];
-  for (let i = 0; i < 3; i += 1) {
+  const numberOfRounds = 3;
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(1, 100);
     const secondNumber = getRandomNumber(1, 100);
     gameRound.push(`${firstNumber} ${secondNumber}`);

@@ -2,17 +2,17 @@ import getRandomNumber from '../helpers.js';
 
 import startGame from '../index.js';
 
-const getAnswer = (sign, one, two) => {
+const getAnswer = (sign, firstNumber, secondNumber) => {
   let result;
   switch (sign) {
     case '+':
-      result = one + two;
+      result = firstNumber + secondNumber;
       break;
     case '-':
-      result = one - two;
+      result = firstNumber - secondNumber;
       break;
     case '*':
-      result = one * two;
+      result = firstNumber * secondNumber;
       break;
     default:
       throw new Error('Wrong sign! Restart the game');
@@ -24,7 +24,8 @@ const runCalcGame = () => {
   const gamerule = 'What is the result of the expression?';
   const gameData = [];
   let gameRound = [];
-  for (let i = 0; i < 3; i += 1) {
+  const numberOfRounds = 3;
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(0, 100);
     const secondNumber = getRandomNumber(0, 100);
     const operators = ['+', '-', '*'];
