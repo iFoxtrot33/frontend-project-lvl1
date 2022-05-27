@@ -23,14 +23,17 @@ const getAnswer = (sign, one, two) => {
 const runCalcGame = () => {
   const gamerule = 'What is the result of the expression?';
   const gameData = [];
+  let gameRound = [];
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = getRandomNumber(0, 100);
     const secondNumber = getRandomNumber(0, 100);
     const operators = ['+', '-', '*'];
     const operator = getRandomNumber(0, 2);
     const sign = operators[operator];
-    gameData.push(`${firstNumber} ${sign} ${secondNumber}`);
-    gameData.push((getAnswer(sign, firstNumber, secondNumber)).toString());
+    gameRound.push(`${firstNumber} ${sign} ${secondNumber}`);
+    gameRound.push((getAnswer(sign, firstNumber, secondNumber)).toString());
+    gameData.push(gameRound);
+    gameRound = [];
   }
   startGame(gameData, gamerule);
 };

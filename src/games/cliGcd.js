@@ -18,11 +18,14 @@ const calcMaxDivider = (num1, num2) => {
 const runGameGcd = () => {
   const gamerule = 'Find the greatest common divisor of given numbers.';
   const gameData = [];
+  let gameRound = [];
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = getRandomNumber(1, 100);
     const secondNumber = getRandomNumber(1, 100);
-    gameData.push(`${firstNumber} ${secondNumber}`);
-    gameData.push((calcMaxDivider(firstNumber, secondNumber)).toString());
+    gameRound.push(`${firstNumber} ${secondNumber}`);
+    gameRound.push((calcMaxDivider(firstNumber, secondNumber)).toString());
+    gameData.push(gameRound);
+    gameRound = [];
   }
   startGame(gameData, gamerule);
 };

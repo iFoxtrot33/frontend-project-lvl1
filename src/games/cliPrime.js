@@ -19,12 +19,15 @@ const isPrime = (num) => {
 
 const runGamePrime = () => {
   const gameData = [];
+  let gameRound = [];
   let first;
   const gamerule = '"yes" if given number is prime. Otherwise answer "no"';
   for (let i = 0; i < 3; i += 1) {
     first = getRandomNumber(1, 1000);
-    gameData.push(first);
-    gameData.push(isPrime(first) ? 'yes' : 'no');
+    gameRound.push(first);
+    gameRound.push(isPrime(first) ? 'yes' : 'no');
+    gameData.push(gameRound);
+    gameRound = [];
   }
   startGame(gameData, gamerule);
 };
