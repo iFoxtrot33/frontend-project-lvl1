@@ -7,7 +7,7 @@ const choseSign = () => {
   const i = getRandomNumber(0, 2);
   return operators[i];
 };
-const answer = (sign, one, two) => {
+const getAnswer = (sign, one, two) => {
   let result;
   switch (sign) {
     case '+':
@@ -30,7 +30,7 @@ const runCalcGame = () => {
     const secondNumber = getRandomNumber(0, 100);
     const sign = choseSign();
     gameData.push(`${firstNumber} ${sign} ${secondNumber}`);
-    gameData.push((answer(sign, firstNumber, secondNumber)).toString());
+    gameData.push((getAnswer(sign, firstNumber, secondNumber)).toString());
   }
   startGame(gameData, gamerule);
 };
