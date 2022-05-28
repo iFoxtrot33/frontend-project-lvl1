@@ -20,9 +20,9 @@ const runGameProgression = () => {
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(1, 100);
     const step = getRandomNumber(1, 10);
-    const progressionLength = getRandomNumber(7, 10);
+    const progressionLength = getRandomNumber(6, 9);
     const progression = makeProgression(step, progressionLength, firstNumber);
-    const hiddenAnswer = getRandomNumber(1, progressionLength);
+    const hiddenAnswer = getRandomNumber(1, progressionLength - 1);
     const temp = ((progression[hiddenAnswer]).toString());
     progression[hiddenAnswer] = '..';
     gameRound.push(`${progression.join(' ')}`);
