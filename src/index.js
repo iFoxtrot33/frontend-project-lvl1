@@ -4,7 +4,7 @@ const startGame = (gameData, gamerule) => {
   let clientAnswer;
   const gameQuestion = 0;
   const rightAnswer = 1;
-  const requiredVictories = 2;
+  const requiredVictories = 3;
   let wins = 0;
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');

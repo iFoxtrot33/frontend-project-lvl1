@@ -22,10 +22,10 @@ const runGameProgression = () => {
     const step = getRandomNumber(1, 10);
     const progressionLength = getRandomNumber(6, 9);
     const progression = makeProgression(step, progressionLength, firstNumber);
-    const hiddenAnswer = getRandomNumber(1, progressionLength - 1);
-    const temp = ((progression[hiddenAnswer]).toString());
-    progression[hiddenAnswer] = '..';
-    gameRound.push(`${progression.join(' ')}`);
+    const hiddenIndex = getRandomNumber(1, progressionLength - 1);
+    const temp = ((progression[hiddenIndex]).toString());
+    progression[hiddenIndex] = '..';
+    gameRound.push(`${progression.join()}`);
     gameRound.push(temp);
     gameData.push(gameRound);
     gameRound = [];
