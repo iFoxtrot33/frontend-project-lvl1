@@ -3,21 +3,16 @@ import getRandomNumber from '../helpers.js';
 import { startGame, numberOfRounds } from '../index.js';
 
 const getAnswer = (sign, firstNumber, secondNumber) => {
-  let result;
   switch (sign) {
     case '+':
-      result = firstNumber + secondNumber;
-      break;
+      return firstNumber + secondNumber;
     case '-':
-      result = firstNumber - secondNumber;
-      break;
+      return firstNumber - secondNumber;
     case '*':
-      result = firstNumber * secondNumber;
-      break;
+      return firstNumber * secondNumber;
     default:
-      throw new Error('Wrong sign! Restart the game');
+      throw new Error(`${sign} is wrong! Restart the game`);
   }
-  return result;
 };
 
 const runCalcGame = () => {
@@ -28,8 +23,8 @@ const runCalcGame = () => {
     const firstNumber = getRandomNumber(0, 100);
     const secondNumber = getRandomNumber(0, 100);
     const operators = ['+', '-', '*'];
-    const operator = getRandomNumber(0, 2);
-    const sign = operators[operator];
+    const operatorIndex = getRandomNumber(0, operators.length - 1);
+    const sign = operators[operatorIndex];
     gameRound = [`${firstNumber} ${sign} ${secondNumber}`, getAnswer(sign, firstNumber, secondNumber).toString()];
     gameData.push(gameRound);
   }
