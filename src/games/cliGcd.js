@@ -22,10 +22,8 @@ const runGameGcd = () => {
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(1, 100);
     const secondNumber = getRandomNumber(1, 100);
-    gameRound.push(`${firstNumber} ${secondNumber}`);
-    gameRound.push((calculateGCD(firstNumber, secondNumber)).toString());
+    gameRound = [`${firstNumber} ${secondNumber}`, calculateGCD(firstNumber, secondNumber).toString()];
     gameData.push(gameRound);
-    gameRound = [];
   }
   startGame(gameData, gamerule);
 };

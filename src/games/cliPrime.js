@@ -20,10 +20,8 @@ const runGamePrime = () => {
   const gamerule = '"yes" if given number is prime. Otherwise answer "no"';
   for (let i = 0; i < numberOfRounds; i += 1) {
     number = getRandomNumber(1, 1000);
-    gameRound.push(number);
-    gameRound.push(isPrime(number) ? 'yes' : 'no');
+    gameRound = [number, isPrime(number) ? 'yes' : 'no'];
     gameData.push(gameRound);
-    gameRound = [];
   }
   startGame(gameData, gamerule);
 };

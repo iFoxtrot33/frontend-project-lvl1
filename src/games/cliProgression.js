@@ -24,10 +24,8 @@ const runGameProgression = () => {
     const hiddenIndex = getRandomNumber(1, progressionLength - 1);
     const temp = ((progression[hiddenIndex]).toString());
     progression[hiddenIndex] = '..';
-    gameRound.push(`${progression.join(' ')}`);
-    gameRound.push(temp);
+    gameRound = [`${progression.join(' ')}`, temp];
     gameData.push(gameRound);
-    gameRound = [];
   }
   startGame(gameData, gamerule);
 };

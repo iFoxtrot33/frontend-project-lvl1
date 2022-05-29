@@ -9,10 +9,8 @@ const gamerule = 'Answer "yes" if the number is even, otherwise answer "no".';
 const runBrainEven = () => {
   for (let i = 0; i < numberOfRounds; i += 1) {
     const number = getRandomNumber(1, 100);
-    gameRound.push(number);
-    gameRound.push(isEven(number) ? 'yes' : 'no');
+    gameRound = [number, isEven(number) ? 'yes' : 'no'];
     gameData.push(gameRound);
-    gameRound = [];
   }
   startGame(gameData, gamerule);
 };

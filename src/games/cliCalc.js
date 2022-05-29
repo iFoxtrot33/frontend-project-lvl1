@@ -30,10 +30,8 @@ const runCalcGame = () => {
     const operators = ['+', '-', '*'];
     const operator = getRandomNumber(0, 2);
     const sign = operators[operator];
-    gameRound.push(`${firstNumber} ${sign} ${secondNumber}`);
-    gameRound.push((getAnswer(sign, firstNumber, secondNumber)).toString());
+    gameRound = [`${firstNumber} ${sign} ${secondNumber}`, getAnswer(sign, firstNumber, secondNumber).toString()];
     gameData.push(gameRound);
-    gameRound = [];
   }
   startGame(gameData, gamerule);
 };
