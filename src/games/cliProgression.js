@@ -25,7 +25,7 @@ const runGameProgression = () => {
     const hiddenIndex = getRandomNumber(1, progressionLength - 1);
     const temp = ((progression[hiddenIndex]).toString());
     progression[hiddenIndex] = '..';
-    gameRound.push(`${progression.join()}`);
+    gameRound.push(`${progression.join(' ')}`);
     gameRound.push(temp);
     gameData.push(gameRound);
     gameRound = [];
