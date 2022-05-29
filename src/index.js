@@ -1,10 +1,11 @@
 import readlineSync from 'readline-sync';
 
-const startGame = (gameData, gamerule) => {
+export const numberOfRounds = 3;
+
+export const startGame = (gameData, gamerule) => {
   let clientAnswer;
   const gameQuestion = 0;
   const rightAnswer = 1;
-  const requiredVictories = 3;
   let wins = 0;
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
@@ -21,11 +22,9 @@ const startGame = (gameData, gamerule) => {
     } else {
       console.log('Correct!');
       wins += 1;
-      if (wins === requiredVictories) {
+      if (wins === numberOfRounds) {
         console.log(`Congratulations, ${userName}!`);
       }
     }
   }
 };
-
-export default startGame;

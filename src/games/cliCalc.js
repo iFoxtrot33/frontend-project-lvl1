@@ -1,6 +1,6 @@
 import getRandomNumber from '../helpers.js';
 
-import startGame from '../index.js';
+import { startGame, numberOfRounds } from '../index.js';
 
 const getAnswer = (sign, firstNumber, secondNumber) => {
   let result;
@@ -24,7 +24,6 @@ const runCalcGame = () => {
   const gamerule = 'What is the result of the expression?';
   const gameData = [];
   let gameRound = [];
-  const numberOfRounds = 3;
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(0, 100);
     const secondNumber = getRandomNumber(0, 100);

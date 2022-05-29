@@ -1,6 +1,6 @@
 import getRandomNumber from '../helpers.js';
 
-import startGame from '../index.js';
+import { startGame, numberOfRounds } from '../index.js';
 
 const calculateGCD = (firstNumber, secondNumber) => {
   let a = firstNumber;
@@ -19,7 +19,6 @@ const runGameGcd = () => {
   const gamerule = 'Find the greatest common divisor of given numbers.';
   const gameData = [];
   let gameRound = [];
-  const numberOfRounds = 3;
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(1, 100);
     const secondNumber = getRandomNumber(1, 100);

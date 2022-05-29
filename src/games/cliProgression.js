@@ -1,6 +1,6 @@
 import getRandomNumber from '../helpers.js';
 
-import startGame from '../index.js';
+import { startGame, numberOfRounds } from '../index.js';
 
 const makeProgression = (step, progressionLength, firstNumber) => {
   const result = [];
@@ -16,7 +16,6 @@ const runGameProgression = () => {
   const gamerule = 'What number is missing in the progression?';
   const gameData = [];
   let gameRound = [];
-  const numberOfRounds = 3;
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(1, 100);
     const step = getRandomNumber(1, 10);
