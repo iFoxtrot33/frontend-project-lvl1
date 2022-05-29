@@ -2,7 +2,7 @@ import getRandomNumber from '../helpers.js';
 
 import { startGame, numberOfRounds } from '../index.js';
 
-const getAnswer = (sign, firstNumber, secondNumber) => {
+const calculate = (sign, firstNumber, secondNumber) => {
   switch (sign) {
     case '+':
       return firstNumber + secondNumber;
@@ -25,7 +25,7 @@ const runCalcGame = () => {
     const operators = ['+', '-', '*'];
     const operatorIndex = getRandomNumber(0, operators.length - 1);
     const sign = operators[operatorIndex];
-    gameRound = [`${firstNumber} ${sign} ${secondNumber}`, getAnswer(sign, firstNumber, secondNumber).toString()];
+    gameRound = [`${firstNumber} ${sign} ${secondNumber}`, calculate(sign, firstNumber, secondNumber).toString()];
     gameData.push(gameRound);
   }
   startGame(gameData, gamerule);
