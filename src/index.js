@@ -4,7 +4,6 @@ export const numberOfRounds = 3;
 
 export const startGame = (gameData, gamerule) => {
   let clientAnswer;
-  let wins = 0;
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -13,16 +12,11 @@ export const startGame = (gameData, gamerule) => {
     const [gameQuestion, rightAnswer] = gameData[i];
     console.log(`Question: ${gameQuestion}`);
     clientAnswer = readlineSync.question('Your answer: ');
-    if ((clientAnswer) !== (rightAnswer)) {
-      console.log(`${clientAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.
+    if (clientAnswer !== rightAnswer) {
+      return console.log(`${clientAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.
         Let's try again, ${userName}!`);
-      break;
-    } else {
-      console.log('Correct!');
-      wins += 1;
-      if (wins === numberOfRounds) {
-        console.log(`Congratulations, ${userName}!`);
-      }
     }
+    console.log('Correct!');
   }
+  return `Congratulations, ${userName}!`;
 };
