@@ -14,7 +14,7 @@ const makeProgression = (step, progressionLength, firstNumber) => {
 
 const runGameProgression = () => {
   const gamerule = 'What number is missing in the progression?';
-  const gameData = [];
+  const gameRounds = [];
   let gameRound = [];
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(1, 100);
@@ -25,9 +25,9 @@ const runGameProgression = () => {
     const temp = ((progression[hiddenIndex]).toString());
     progression[hiddenIndex] = '..';
     gameRound = [progression.join(' '), temp];
-    gameData.push(gameRound);
+    gameRounds.push(gameRound);
   }
-  startGame(gameData, gamerule);
+  startGame(gameRounds, gamerule);
 };
 
 export default runGameProgression;
