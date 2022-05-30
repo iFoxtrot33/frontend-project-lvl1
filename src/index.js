@@ -8,7 +8,7 @@ export const startGame = (gameRounds, gamerule) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(gamerule);
-  for (let i = 0; i < gameRounds.length; i += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const [gameQuestion, rightAnswer] = gameRounds[i];
     console.log(`Question: ${gameQuestion}`);
     clientAnswer = readlineSync.question('Your answer: ');

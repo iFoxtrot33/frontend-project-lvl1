@@ -18,14 +18,15 @@ const calculate = (sign, firstNumber, secondNumber) => {
 const runCalcGame = () => {
   const gamerule = 'What is the result of the expression?';
   const gameRounds = [];
-  let gameRound = [];
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(0, 100);
     const secondNumber = getRandomNumber(0, 100);
     const operators = ['+', '-', '*'];
     const operatorIndex = getRandomNumber(0, operators.length - 1);
     const sign = operators[operatorIndex];
-    gameRound = [`${firstNumber} ${sign} ${secondNumber}`, calculate(sign, firstNumber, secondNumber).toString()];
+    const gameQuestion = `${firstNumber} ${sign} ${secondNumber}`;
+    const rightAnswer = calculate(sign, firstNumber, secondNumber).toString();
+    const gameRound = [gameQuestion, rightAnswer];
     gameRounds.push(gameRound);
   }
   startGame(gameRounds, gamerule);
