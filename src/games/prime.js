@@ -15,12 +15,11 @@ const isPrime = (num) => {
 
 const runGamePrime = () => {
   const gameRounds = [];
-  let gameRound = [];
   let number;
   const gamerule = '"yes" if given number is prime. Otherwise answer "no"';
   for (let i = 0; i < numberOfRounds; i += 1) {
     number = getRandomNumber(1, 1000);
-    gameRound = [number, isPrime(number) ? 'yes' : 'no'];
+    const gameRound = [number, isPrime(number) ? 'yes' : 'no'];
     gameRounds.push(gameRound);
   }
   startGame(gameRounds, gamerule);
