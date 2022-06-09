@@ -13,7 +13,8 @@ ______________
 Game: brain-even
 
 To start type: brain-even
-
+![brain-games](pictures/brain-games.png?raw=true "brain-games")
+__________________
 Rule: 
 Answer "yes" if the number is even, otherwise answer "no"
 
