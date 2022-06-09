@@ -9,11 +9,13 @@
 
 Description: There are 5 mini-games in this console app. Type: 'brain-games' to say hello :)
 
+![brain-games](pictures/brain-games1.png?raw=true "brain-games")
+
+![brain-games](pictures/brain-games2.png?raw=true "brain-games")
 ______________
 Game: brain-even
 
 To start type: brain-even
-![brain-games](pictures/brain-games.png?raw=true "brain-games")
 __________________
 Rule: 
 Answer "yes" if the number is even, otherwise answer "no"
