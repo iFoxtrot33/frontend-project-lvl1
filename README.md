@@ -17,11 +17,11 @@ Game: brain-even
 
 To start type: brain-even
 ![brain-even](pictures/brain-even1.png?raw=true "brain-even")
-__________________
+
 Rule: Answer "yes" if the number is even, otherwise answer "no"
 ![brain-even](pictures/brain-even2.png?raw=true "brain-even")
 
-In case of right answers.
+In case of right answers:
 ![brain-even](pictures/brain-even3.png?raw=true "brain-even")
 
 In case of wrong answer:
@@ -35,7 +35,7 @@ To start type: brain-calc
 Rule: Calculate the result of the expression.
 ![brain-calc](pictures/brain-calc2.png?raw=true "brain-calc")
 
-In case of right answers.
+In case of right answers:
 ![brain-calc](pictures/brain-calc3.png?raw=true "brain-calc")
 
 In case of wrong answer: 
@@ -49,7 +49,7 @@ To start type: brain-gcd
 Rule: Find the greatest common divisor of given numbers.
 ![brain-gcd](pictures/brain-gcd2.png?raw=true "brain-gcd")
 
-In case of right answers.
+In case of right answers:
 ![brain-gcd](pictures/brain-gcd3.png?raw=true "brain-gcd")
 
 In case of wrong answer: 
@@ -63,7 +63,7 @@ To start type: brain-progression
 Rule:Find the number is missing in the progression.
 ![brain-progression](pictures/brain-progression2.png?raw=true "brain-progression")
 
-In case of right answers.
+In case of right answers:
 ![brain-progression](pictures/brain-progression3.png?raw=true "brain-progression")
 
 In case of wrong answer: 
@@ -77,7 +77,7 @@ To start type: brain-prime
 Rule:Answer yes if given number is prime. Otherwise answer no.
 ![brain-prime](pictures/brain-prime2.png?raw=true "brain-prime")
 
-In case of right answers.
+In case of right answers:
 ![brain-prime](pictures/brain-prime3.png?raw=true "brain-prime")
 
 In case of wrong answer: 
