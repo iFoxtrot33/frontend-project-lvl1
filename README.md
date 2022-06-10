@@ -16,111 +16,72 @@ ______________
 Game: brain-even
 
 To start type: brain-even
+![brain-even](pictures/brain-even1.png?raw=true "brain-even")
 __________________
-Rule: 
-Answer "yes" if the number is even, otherwise answer "no"
+Rule: Answer "yes" if the number is even, otherwise answer "no"
+![brain-even](pictures/brain-even2.png?raw=true "brain-even")
 
-Sample:
-Welcome to the Brain Games!
-May I have your name? Iurii
-Hello, Iurii!
-Answer "yes" if the number is even, otherwise answer "no".
-Question: 15
-Your answer: yes
+In case of right answers.
+![brain-even](pictures/brain-even3.png?raw=true "brain-even")
 
 In case of wrong answer:
-'yes' is wrong answer ;(. Correct answer was 'no'.
-Let's try again, Iurii!
-
-In case of right answer: Correct!
+![brain-even](pictures/brain-even4.png?raw=true "brain-even")
 __________
 Game: brain-calc
 
 To start type: brain-calc
+![brain-calc](pictures/brain-calc1.png?raw=true "brain-calc")
 
-Rule: 
-Calculate the result of the expression.
+Rule: Calculate the result of the expression.
+![brain-calc](pictures/brain-calc2.png?raw=true "brain-calc")
 
-Sample:
-Welcome to the Brain Games!
-May I have your name? Sam
-Hello, Sam!
-What is the result of the expression?
-Question: 4 + 10
-Your answer: 14
-Correct!
+In case of right answers.
+![brain-calc](pictures/brain-calc3.png?raw=true "brain-calc")
 
 In case of wrong answer: 
-'145' is wrong answer ;(. Correct answer was '175'.
-Let's try again, Iurii!
-
-In case of right answer: Correct!
+![brain-calc](pictures/brain-calc4.png?raw=true "brain-calc")
 __________
 Game: brain-gcd 
 
 To start type: brain-gcd
+![brain-gcd](pictures/brain-gcd1.png?raw=true "brain-gcd")
 
 Rule: Find the greatest common divisor of given numbers.
+![brain-gcd](pictures/brain-gcd2.png?raw=true "brain-gcd")
 
-Sample:
-Welcome to the Brain Games!
-May I have your name? Sam
-Hello, Sam!
-Find the greatest common divisor of given numbers.
-Question: 25 50
-Your answer: 25
-Correct!
+In case of right answers.
+![brain-gcd](pictures/brain-gcd3.png?raw=true "brain-gcd")
 
 In case of wrong answer: 
-'5' is wrong answer ;(. Correct answer was '25'.
-Let's try again, Iurii!
-
-In case of right answer: Correct!
+![brain-gcd](pictures/brain-gcd4.png?raw=true "brain-gcd")
 ___________
 Game: brain-progression
 
 To start type: brain-progression
+![brain-progression](pictures/brain-progression1.png?raw=true "brain-progression")
 
-Rule:
-Find the number is missing in the progression.
+Rule:Find the number is missing in the progression.
+![brain-progression](pictures/brain-progression2.png?raw=true "brain-progression")
 
-Sample:
-Welcome to the Brain Games!
-May I have your name? Sam
-Hello, Sam!
-What number is missing in the progression?
-Question: 5 7 9 11 13 .. 17 19 21 23
-Your answer: 15
-Correct!
+In case of right answers.
+![brain-progression](pictures/brain-progression3.png?raw=true "brain-progression")
 
 In case of wrong answer: 
-'14' is wrong answer ;(. Correct answer was '15'.
-Let's try again, Iurii!
-
-In case of right answer: Correct!
+![brain-progression](pictures/brain-progression4.png?raw=true "brain-progression")
 ____________
 Game: brain-prime
 
 To start type: brain-prime
+![brain-prime](pictures/brain-prime1.png?raw=true "brain-prime")
 
-Rule:
-Answer yes if given number is prime. Otherwise answer no.
+Rule:Answer yes if given number is prime. Otherwise answer no.
+![brain-prime](pictures/brain-prime2.png?raw=true "brain-prime")
 
-Sample:
-Welcome to the Brain Games!
-May I have your name? Sam
-Hello, Sam!
-Answer "yes" if given number is prime. Otherwise answer "no".
-Question: 7
-Your answer: yes
-Correct!
+In case of right answers.
+![brain-prime](pictures/brain-prime3.png?raw=true "brain-prime")
 
-In case of wrong answer:
-'yes' is wrong answer ;(. Correct answer was 'no'.
-Let's try again, Iurii!
-
-In case of right answer: Correct!
-
+In case of wrong answer: 
+![brain-prime](pictures/brain-prime4.png?raw=true "brain-prime")
 
 
 
