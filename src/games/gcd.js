@@ -17,7 +17,7 @@ const calculateGCD = (firstNumber, secondNumber) => {
 
 const runGameGcd = () => {
   const gameRounds = [];
-  const gamerule = 'Find the greatest common divisor of given numbers.';
+  const gameRule = 'Find the greatest common divisor of given numbers.';
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(1, 100);
     const secondNumber = getRandomNumber(1, 100);
@@ -26,7 +26,7 @@ const runGameGcd = () => {
     const gameRound = [gameQuestion, rightAnswer];
     gameRounds.push(gameRound);
   }
-  startGame(gameRounds, gamerule);
+  startGame(gameRounds, gameRule);
 };
 
 export default runGameGcd;

@@ -82,6 +82,3 @@ In case of right answers:
 
 In case of wrong answer: 
 ![brain-prime](pictures/brain-prime4.png?raw=true "brain-prime")
-
-
-

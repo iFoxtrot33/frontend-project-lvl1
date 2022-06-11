@@ -16,7 +16,7 @@ const calculate = (sign, firstNumber, secondNumber) => {
 };
 
 const runCalcGame = () => {
-  const gamerule = 'What is the result of the expression?';
+  const gameRule = 'What is the result of the expression?';
   const gameRounds = [];
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomNumber(0, 100);
@@ -29,7 +29,7 @@ const runCalcGame = () => {
     const gameRound = [gameQuestion, rightAnswer];
     gameRounds.push(gameRound);
   }
-  startGame(gameRounds, gamerule);
+  startGame(gameRounds, gameRule);
 };
 
 export default runCalcGame;
