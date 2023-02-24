@@ -1,13 +1,24 @@
-### Hexlet tests:
+# 🎲Game console
+
+## ℹAbout:
+This is a basic console game application.
+
+## 💻To deploy localy:
+```
+1)git clone https://github.com/iFoxtrot33/calculator-test.git
+2)cd calculator-test
+3)npm install
+```
+## 🎛️Tests:
 [![Actions Status](https://github.com/iFoxtrot33/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/iFoxtrot33/frontend-project-lvl1/actions)
-
-### Code-Climate tests:
 <a href="https://codeclimate.com/github/iFoxtrot33/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/81e0b2377a1c482b8542/maintainability" /></a>
-
-### Linter status:
 ![example workflow](https://github.com/iFoxtrot33/frontend-project-lvl1/actions/workflows/lintCheck.yml/badge.svg)
 
-Description: There are 5 mini-games in this console app. Type: 'brain-games' to say hello :)
+## 🛠Stack:
+- VanillaJS
+
+## 🗎Documentation:
+There are 5 mini-games in this console app. Type: 'brain-games' to say hello :)
 
 ![brain-games](pictures/brain-games1.png?raw=true "brain-games")
 
